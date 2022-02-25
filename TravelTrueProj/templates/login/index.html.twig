@@ -1,0 +1,19 @@
+
+{% extends 'front.html.twig' %}
+
+ {% block content %}
+
+
+
+<form action="{{ path('login') }}" method="post">
+    <div class="form-group">
+        <label class="label15">Email Address*</label>
+        <input type="email" name="_username"class="job-input" placeholder="Enter Email Address" required>
+    </div>
+    <div class="form-group">
+        <label class="label15" required >Password*</label>
+        <input  name="_password" type="password" class="job-input" placeholder="Enter Password">
+    </div>
+    <button class="lr_btn" type="submit">Sign in Now</button>
+</form>
+ {% endblock %}

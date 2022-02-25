@@ -1,0 +1,29 @@
+{% extends 'front.html.twig' %}
+ {% block content %}
+<table border="5" cellspacing="10" >
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Lieu</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr {% for p in publication %}>
+        <td> {{ p.getDescription()}}    </td>
+        <td>  {{ p.getLieu()}}   </td>
+        <td> <a href="{{ path('d',{'id':p.id}) }}"> Delete </a></td>
+        <td> <a href="{{ path('update',{'id':p.id}) }}"> Update </a></td>
+
+    </tr {% endfor %}>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>Image</th>
+        <th>ID</th>
+        <th>Titre</th>
+    </tr>
+    </tfoot>
+</table>
+ {% endblock %}
