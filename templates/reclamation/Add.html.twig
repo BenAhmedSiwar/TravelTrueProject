@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reclamation{% endblock %}
+
+{% block content %}
+    <div class="single-slider hero-overly  slider-height d-flex align-items-center" data-background="/assets/img/hero/h1_hero.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-9">
+                    <div class="hero__caption">
+                        <h1 " style="color: yellow"> Add <span > Your Issue</span>  </h1>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Box -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <!-- form -->
+
+                    {{ form_start(form,{'attr': {'novalidate': 'novalidate','class':'search-box'}} ) }}
+                    <div  class="input-form mb-30" >
+                         {{ form_widget(form.Description, {'attr':{ 'placeholder': 'Insert your Description Here'  }}) }}
+                        {{ form_errors(form.Description) }}
+                    </div>
+                    <div class="select-form mb-30">
+                        <div class="select-itms">
+                            {{ form_widget(form.typeReclamation) }}
+                        </div>
+                    </div>
+                    <div class="search-form mb-30">
+
+                        {{ form_widget(form.ajouter,{'attr':{'class':'btn btn-warning' }}) }}
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

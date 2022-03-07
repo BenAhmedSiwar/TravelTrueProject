@@ -1,0 +1,16 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Hello BackController!{% endblock %}
+
+{% block content %}
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate','class':'search-box'}} ) }}
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+
+        {{ form_widget(form.nom, {'attr':{ 'placeholder': 'Insert the new type','class':'form-control'  }}) }}
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    {{ form_widget(form.ajouter,{'attr':{'class':'btn btn-warning' }}) }}
+    {{ form_end(form) }}
+{% endblock %}

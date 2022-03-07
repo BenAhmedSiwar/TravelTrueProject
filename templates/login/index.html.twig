@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="slider-area  ">
+        <!-- Mobile Menu -->
+        <div class="slider-active">
+            <div class="single-slider hero-overly  slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-9">
+                            <div class="hero__caption">
+                                <h1>Log <span>In!</span> </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <!-- form -->
+                            <form action="#" class="search-box">
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="username">Username:</label>
+                                        <input type="text" class="form-control" id="username" placeholder="username"/>
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="from">password:</label>
+                                        <input type="password" class="form-control" id="password" placeholder="password"/>
+                                    </div>
+                                </div>
+
+                                <div class="search-form mb-30">
+                                    <a href="#">Log In</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Hello BackController!{% endblock %}
+
+{% block content %}
+
+        <div class="single-slider hero-overly  slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+            <div class="container">
+                <div class="row"  , style="width: 100%;">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Liste Des Types Reclamation</h3>
+
+
+                                <table  id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" >
+
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th style="color: darkblue">Nom </th>
+
+                                        <th style="color: darkblue">update</th>
+                                        <th style="color: darkblue">delete</th>
+
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr {% for reclamation in typereclamation %}>
+                                        <td>{{ reclamation.id }}</td>
+                                        <td>{{ reclamation.nom }}</td>
+
+                                        <td><a href="{{ path('UpdateTypeReclamation',{'id':reclamation.id})}}"><i class="ri-pencil-fill"></i>Update </a></td>
+                                        <td><a href="{{ path('deleteTypeReclamation',{'id':reclamation.id})}}"><i class="ri-delete-bin-fill"></i>Delete</a></td>
+                                    </tr{% endfor %}>
+                                    <li><a href="{{ path('AddTypeReclamation') }}" style="color: darkblue">Add Type Reclamation</a></li>
+
+                                    </tbody>
+                                </table>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

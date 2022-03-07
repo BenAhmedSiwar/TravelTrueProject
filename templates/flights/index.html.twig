@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="slider-area  ">
+        <!-- Mobile Menu -->
+        <div class="slider-active">
+            <div class="single-slider hero-overly   d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-9">
+                            <div class="hero__caption">
+                                <h1>Find your <span>Next flight!</span> </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <!-- form -->
+                            <form action="#" class="search-box">
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="from">From:</label>
+                                        <input type="text" class="form-control" id="from-place" placeholder="Tunis, Tunisia"/>
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="from">To:</label>
+                                        <input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="date-start">Check In:</label>
+                                        <input type="date" class="form-control" id="date-start" />
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="input-field">
+                                        <label for="date-end">Check Out:</label>
+                                        <input type="date" class="form-control" id="date-end" />
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="select-itms">
+                                        <label for="class">Class:</label><section>
+                                            <select name="select" id="select1">
+                                                <option value="Economy"disabled selected>Economy</option>
+                                                <option value="first">First</option>
+                                                <option value="business">Business</option>
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="select-itms">
+                                        <label for="class">Adult:</label><section>
+                                            <select name="select" id="select1">
+                                                <option value=""disabled selected>1</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class=" mb-30">
+                                    <div class="select-itms">
+                                        <label for="class">children:</label><section>
+                                            <select name="select" id="select1">
+                                                <option value=""disabled selected>1</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+
+
+                                <div class="search-form mb-30">
+                                    <a href="#">Reserve</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
