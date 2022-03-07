@@ -1,0 +1,72 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Hello EvenementController!{% endblock %}
+ {% block favoriteAccomodation  %}
+ {% endblock  %}
+    {% block containerr %}
+
+{% block content %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="table-responsive">
+    <input type="text" name="AfficherClasse" onkeyup="myFunction()" placeholder="Nom (EX:cisco) "  id="myInput" >
+    <table class="table mb-0 " id="mytable" >
+        <thead>
+        <tr>
+            <th>Name    </th>
+            <th>Id       </th>
+            <th>Description     </th>
+            <th>Edit     </th>
+            <th>Delete     </th>
+
+
+        </tr>
+        {% for event in listEvents %}
+            <tr>
+                <td> {{ event.name }} </td>
+                <td> {{ event.id }} </td>
+                <td> {{ event.description }} </td>
+                <td> <button type="button" class="btn btn-outline-primary"><a href="{{ path('event_edit',{'id':event.id}) }}"> Edit </a></button> </td>
+                <td> <button type="button" class="btn btn-outline-danger"><a href="{{ path('event_delete',{'id':event.id}) }}"> Delete </a></button> </td>
+
+
+
+            </tr>
+        {% endfor%}
+
+        <table border="3">
+
+        </table>
+        <a class="btn btn-success" href="{{path('imprimer') }}">  PDF </a>
+
+        <script>
+            function myFunction() {
+                var input, filter, table, tr, td, i,j, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("mytable");
+                tr = table.getElementsByTagName("tr");
+//   alert(td.length);
+                for (i = 0; i < tr.length; i++) {
+                    td= tr[i].getElementsByTagName("td")[0];
+
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+
+
+        </script>
+
+        {% endblock %}
+        {% endblock %}

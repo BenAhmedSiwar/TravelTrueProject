@@ -1,0 +1,12 @@
+{% extends 'back.html.twig' %}
+
+{% block content %}
+
+<form method="post" action="{{ path('event_delete', {'id': events.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('event_delete' ~ events.id) }}">
+    <button class="btn" >Delete</button>
+
+</form>
+
+{% endblock %}

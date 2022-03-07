@@ -1,0 +1,20 @@
+{% extends 'front.html.twig' %}
+    {% block containerr %}
+
+
+    <tr>    User : {{ user.username }} </tr> <br>
+    Evenemenet : {{ event.name }}
+        {{ form_start(form) }}
+
+    <label>nombre of places </label>
+
+    <tr> {{ form_widget(form.nbrPlace) }}</tr> <br>
+
+    ( Number of places available : {{ event.capacity }} ) <br>
+
+
+
+    {{ form_end(form) }}
+{#        <tr>  <a href="{{ path('evenement') }}"> back to list</a> </tr>#}
+        <script src="{{ asset('/js/PreventReload.js') }}"
+    {% endblock %}

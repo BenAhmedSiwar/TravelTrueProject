@@ -1,0 +1,632 @@
+<!doctype html>
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> TravelTrue </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front-office/assets/img/logo/LOGO.png')}}">
+
+
+    <!-- CSS here -->
+    {% block css %}
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/flaticon.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/slicknav.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/fontawesome-all.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/themify-icons.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/slick.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{ asset('front-office/assets/css/style.css')}}">
+    {% endblock %}
+</head>
+
+<body>
+{% block navbar %}
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{ asset('front-office/assets/img/logo/logo.png')}}" alt="" width="50" height="50">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Preloader Start -->
+<header>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top top-bg d-none d-lg-block">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-8">
+                            <div class="header-info-left">
+                                <ul>
+                                    <li>Travel.true@gmail.com</li>
+                                    <li>+216 20 222 555</li>
+                                    <li>Ariana Tunisa</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="header-info-right f-right">
+                                <ul class="header-social">
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom  header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="index.html"><img src="{{ asset('front-office/assets/img/logo/logo.png')}}" alt="" height="90" width="90"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Fights</a></li>
+                                        <li><a href="path{{('accommodation') }}">Accommodation</a></li>
+                                        <li><a href="path{{('evenement') }}">Event</a></li>
+                                        <li><a href="#">Log in</a></li>
+                                        <li><a href="#">Sign up</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- Header End -->
+</header>
+
+<main>
+    {% block containerr %}
+        {% block image %}
+            <!-- slider Area Start-->
+            <div class="slider-area ">
+                <!-- Mobile Menu -->
+                <div class="slider-active">
+                    <div class="single-slider hero-overly  slider-height d-flex align-items-center" data-background="{{ asset('front-office/assets/img/hero/h1_hero.jpg')}}">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-9 col-md-9">
+                                    <div class="hero__caption">
+                                        <h1>Find your <span>Next tour!</span> </h1>
+                                        <p>Where would you like to go?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Search Box -->
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <!-- form -->
+                                    <form action="#" class="search-box">
+                                        <div class="input-form mb-30">
+                                            <input type="text" placeholder="When Would you like to go ?">
+                                        </div>
+                                        <div class="select-form mb-30">
+                                            <div class="select-itms">
+                                                <select name="select" id="select1">
+                                                    <option value="">When</option>
+                                                    <option value="">Services-1</option>
+                                                    <option value="">Services-2</option>
+                                                    <option value="">Services-3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="search-form mb-30">
+                                            <a href="#">Search</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+    <!-- slider Area End-->
+    {%  block OurServicesStart%}
+        <!-- Our Services Start -->
+        <div class="our-services servic-padding">
+            <div class="container">
+                <div class="row d-flex justify-contnet-center">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-tour"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>8000+ Our Local<br>Guides</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-pay"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>100% Trusted Tour<br>Agency</h5>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-experience"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>28+ Years of Travel<br>Experience</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-good"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5>98% Our Travelers<br>are Happy</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Services End -->
+    {% endblock %}
+
+    <!-- Favourite Places Start -->
+    {% block favoriteAccomodation  %}
+    <div class="favourite-place place-padding">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle text-center">
+                        <span>FEATURED TOURS Packages</span>
+                        <h2>Favourite Accomodation</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services1.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services2.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services3.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+
+
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services4.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services5.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single-place mb-30">
+                        <div class="place-img">
+                            <img src="{{ asset('front-office/assets/img/service/services6.jpg')}}" alt="">
+                        </div>
+                        <div class="place-cap">
+                            <div class="place-cap-top">
+                                <span><i class="fas fa-star"></i><span>8.0 Superb</span> </span>
+                                <h3><a href="#">The Dark Forest Adventure</a></h3>
+                                <p class="dolor">$1870 <span>/ Per Person</span></p>
+                            </div>
+                            <div class="place-cap-bottom">
+                                <ul>
+                                    <li><i class="far fa-clock"></i>3 Days</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Los Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Favourite Places End -->
+        <!-- Support Company Start-->
+        <div class="support-company-area support-padding fix">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="support-location-img mb-50">
+                            <img src="{{ asset('front-office/assets/img/service/support-img.jpg')}}" alt="">
+                            <div class="support-img-cap">
+                                <span>Since 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="right-caption">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle section-tittle2">
+                                <span>About Our Company</span>
+                                <h2>We are Go Trip <br>Ravels Support Company</h2>
+                            </div>
+                            <div class="support-caption">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                                <div class="select-suport-items">
+                                    <label class="single-items">Lorem ipsum dolor sit amet
+                                        <input type="checkbox" checked="checked active">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="single-items">Consectetur adipisicing sed do
+                                        <input type="checkbox" checked="checked active">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="single-items">Eiusmod tempor incididunt
+                                        <input type="checkbox" checked="checked active">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="single-items">Ad minim veniam, quis nostrud.
+                                        <input type="checkbox" checked="checked active">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <a href="#" class="btn border-btn">About us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <!-- Support Company End-->
+        {% block testimonal %}
+            <!-- Testimonial Start -->
+            <div class="testimonial-area testimonial-padding" data-background="{{ asset('front-office/assets/img/testmonial/testimonial_bg.jpg')}}">
+                <div class="container ">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-11 col-lg-11 col-md-9">
+                            <div class="h1-testimonial-active">
+                                <!-- Single Testimonial -->
+                                <div class="single-testimonial text-center">
+                                    <!-- Testimonial Content -->
+                                    <div class="testimonial-caption ">
+                                        <div class="testimonial-top-cap">
+                                            <img src="{{ asset('front-office/assets/img/icon/testimonial.png')}}" alt="">
+                                            <p>Have you always been attracted to travel, desires elsewhere and stays at the end of the world? Are you also an ace in the organization and want others to benefit from your status as a traveler by taking on that of a tour operator?   To help you in this process, we review here the steps you will need to take to get a dream trip.</p>
+                                        </div>
+                                        <!-- founder -->
+
+                                    </div>
+                                </div>
+                                <!-- Single Testimonial -->
+                                <div class="single-testimonial text-center">
+                                    <!-- Testimonial Content -->
+                                    <div class="testimonial-caption ">
+                                        <div class="testimonial-top-cap">
+                                            <img src="{{ asset('front-office/assets/img/icon/testimonial.png')}}" alt="">
+                                            <p>.</p>
+                                        </div>
+                                        <!-- founder -->
+                                        <div class="testimonial-founder d-flex align-items-center justify-content-center">
+                                            <div class="founder-img">
+                                                <img src="{{ asset('front-office/assets/img/testmonial/Homepage_testi.png')}}" alt="">
+                                            </div>
+                                            <div class="founder-text">
+                                                <span>Jessya Inn</span>
+                                                <p>Co Founder</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        <!-- Testimonial End -->
+        {% block blog %}
+            <!-- Blog Area Start -->
+            <div class="home-blog-area section-padding2">
+                <div class="container">
+                    <!-- Section Tittle -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle text-center">
+                                <span>Our Recent news</span>
+                                <h2>Tourist Blog</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="home-blog-single mb-30">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="{{ asset('front-office/assets/img/blog/home-blog1.jpg')}}" alt="">
+                                    </div>
+                                    <div class="blog-cap">
+                                        <p> |   Traveling</p>
+                                        <h3><a href="single-blog.html">Tips For Taking A Long-Term Trip With Kids.</a></h3>
+                                        <a href="#" class="more-btn">Read more »</a>
+                                    </div>
+                                </div>
+                                <div class="blog-date text-center">
+                                    <span>24</span>
+                                    <p>Now</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="home-blog-single mb-30">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="{{ asset('front-office/assets/img/blog/home-blog2.jpg')}}" alt="">
+                                    </div>
+                                    <div class="blog-cap">
+                                        <p> |   Traveling</p>
+                                        <h3><a href="single-blog.html">Tips For Taking A Long-Term Trip With Kids.</a></h3>
+                                        <a href="#" class="more-btn">Read more »</a>
+                                    </div>
+                                </div>
+                                <div class="blog-date text-center">
+                                    <span>24</span>
+                                    <p>Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        <!-- Blog Area End -->
+
+</main>
+{% block footer %}
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding footer-bg" data-background="{{ asset('front-office/assets/img/service/footer_bg.jpg')}}">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="{{ asset('front-office/assets/img/logo/logo.png')}}" width="90" height="90" alt=""></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p>Lorem iaspsum doldfor sit amvset, consectetur adipisicing cvelit csed do eiusmod tempor incididucvccnt ut labovre.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#"> Offers & Discounts</a></li>
+                                    <li><a href="#"> Get Coupon</a></li>
+                                    <li><a href="#">  Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>New travel</h4>
+                                <ul>
+                                    <li><a href="#">Vol</a></li>
+                                    <li><a href="#">Hotel</a></li>
+                                    <li><a href="#"> Agency</a></li>
+                                    <li><a href="{{ path('evenement') }}"> Event</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Report an lssue</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer bottom -->
+                <div class="row pt-padding">
+                    <div class="col-xl-7 col-lg-7 col-md-7">
+                        <div class="footer-copy-right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5">
+                        <!-- social -->
+                        <div class="footer-social f-right">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+{% endblock %}
+
+<!-- JS here -->
+
+<!-- All JS Custom Plugins Link Here here -->
+{% block js %}
+    <script src="{{ asset('front-office/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{{ asset('front-office/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/popper.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/bootstrap.min.js')}}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{{ asset('front-office/assets/js/jquery.slicknav.min.js')}}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{{ asset('front-office/assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/slick.min.js')}}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{{ asset('front-office/assets/js/wow.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/animated.headline.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.magnific-popup.js')}}"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="{{ asset('front-office/assets/js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.sticky.js')}}"></script>
+
+    <!-- contact js -->
+    <script src="{{ asset('front-office/assets/js/contact.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.form.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/mail-script.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/jquery.ajaxchimp.min.js')}}"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{{ asset('front-office/assets/js/plugins.js')}}"></script>
+    <script src="{{ asset('front-office/assets/js/main.js')}}"></script>
+{% endblock %}
+
+
+</body>
+</html>
