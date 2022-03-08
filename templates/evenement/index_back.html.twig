@@ -13,7 +13,7 @@
 </style>
 
 <div class="table-responsive">
-    <input type="text" name="AfficherClasse" onkeyup="myFunction()" placeholder="Nom (EX:cisco) "  id="myInput" >
+    <input type="text" name="AfficherClasse" onkeyup="myFunction()" placeholder="Chercher ... "  id="myInput" >
     <table class="table mb-0 " id="mytable" >
         <thead>
         <tr>
@@ -31,7 +31,7 @@
                 <td> {{ event.id }} </td>
                 <td> {{ event.description }} </td>
                 <td> <button type="button" class="btn btn-outline-primary"><a href="{{ path('event_edit',{'id':event.id}) }}"> Edit </a></button> </td>
-                <td> <button type="button" class="btn btn-outline-danger"><a href="{{ path('event_delete',{'id':event.id}) }}"> Delete </a></button> </td>
+                <td>  {{ include ('evenement/delete.html.twig') }}</td>
 
 
 
@@ -41,7 +41,7 @@
         <table border="3">
 
         </table>
-        <a class="btn btn-success" href="{{path('imprimer') }}">  PDF </a>
+        <a class="btn btn-success" href="{{path('imprimer') }}">  Convertir en PDF </a>
 
         <script>
             function myFunction() {

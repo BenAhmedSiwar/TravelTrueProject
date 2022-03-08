@@ -23,7 +23,7 @@ class EventFormType extends AbstractType
             ->add('adresse')
             ->add('image',FileType::class,array('data_class'=>null,'required'=>false))
 
-            ->add('Add Event',SubmitType::class)
+            ->add('Creer',SubmitType::class)
         ;
     }
 

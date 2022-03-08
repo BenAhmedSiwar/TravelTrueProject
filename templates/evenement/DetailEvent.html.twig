@@ -56,11 +56,34 @@
                                     </label>
                                 </div>
 
-                                <a  class="btn btn-dark" href="{{ path('reserver',{'id':evenement.id}) }}" style="color :white;">Reserve </a>
+                                <a  class="btn btn-dark" href="{{ path('reserver',{'id':evenement.id}) }}" style="color :white; padding:6px ">Reserve </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+            <button class="button share_twitter" style="background-color: #005cbf" data-url="https://grafikart.fr/tutoriels/boutons-partage-social-697">
+                <h5 style="color: white">Partager sur twitter</h5>
+            </button>
+            <button class="button share_facebook" style="background-color: #4C67A1" data-url="https://grafikart.fr/tutoriels/boutons-partage-social-697">
+               <h5 style="color: white">Partager sur facebook</h5>
+            </button>
+            <button class="button share_gplus" style="background-color: #D23F31" data-url="http://....">
+                <h5 style="color: white">Partager sur google+</h5>
+
+            </button>
+            <button class="button share_linkedin"  style="background-color: #0177B5"data-url="http://....">
+                <h5 style="color: white"> Partager sur linkedin</h5>
+            </button>
+
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.example.com/page.html&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
+                    scrolling="no" frameborder="0" style="border-bottom-color: #ff8000; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe>
+            <a href="http://twitter.com/share" class="twitter-share-button"
+               data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+            <script type="in/share" data-counter="top"></script>
+            <a name="fb_share" type="box_count" share_url="http://www.example.com/page.html"></a>
+            <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         {% endblock %}

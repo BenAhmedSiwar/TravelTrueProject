@@ -20,20 +20,23 @@ class Evenement
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\NotBlank( message="Veuillez remplir le vide")
      */
 
     private $name;
 
     /**
      * @ORM\Column(type="date")
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\GreaterThan ("today")
+     * @Assert\Expression(
+     *     "this.getdatedebut() < this.getdatefin()",
+     *     message="La date fin ne doit pas être antérieur à la date début")
      */
     private $dateDebut;
 
     /**
      * @ORM\Column(type="date")
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\NotBlank( message="Veuillez remplir le vide")
      */
     private $dateFin;
 
@@ -71,26 +74,27 @@ class Evenement
 
     /**
      * @ORM\Column(type="integer")
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\NotBlank( message="Veuillez remplir ce champ vide")
+     * @Assert\Positive
      * @Assert\Range(
      *      min = 15,
      *      max=60,
-     *      minMessage = "Your event must have at least 15 people",
-     *      maxMessage="Your event has maximum 60 people"
+     *      minMessage = "Votre événement doit réunir au moins 15 personnes",
+     *      maxMessage="Votre événement a un maximum de 60 personnes"
     )
      */
     private $capacity;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\NotBlank( message="Veuillez remplir ce champ vide")
 
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank( message="Please fill the blank")
+     * @Assert\NotBlank( message="Veuillez remplir ce champ vide")
      */
     private $adresse;
 

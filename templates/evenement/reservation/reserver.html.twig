@@ -1,5 +1,5 @@
 {% extends 'front.html.twig' %}
-    {% block containerr %}
+    {% block content %}
 
 
     <tr>    User : {{ user.username }} </tr> <br>
@@ -12,9 +12,10 @@
 
     ( Number of places available : {{ event.capacity }} ) <br>
 
+        <tr style="color: #0b0b0b"> {{form_widget(form.confirm)}} </tr> <br>
 
+        <tr>  <a  class="btn btn-dark"  href="{{ path('evenement') }}" style="color :white; padding: 15px" > back to list</a> </tr>
 
     {{ form_end(form) }}
-{#        <tr>  <a href="{{ path('evenement') }}"> back to list</a> </tr>#}
         <script src="{{ asset('/js/PreventReload.js') }}"
     {% endblock %}

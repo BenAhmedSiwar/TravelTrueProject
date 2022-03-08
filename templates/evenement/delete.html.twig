@@ -1,12 +1,26 @@
-{% extends 'back.html.twig' %}
 
-{% block content %}
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Delete
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmation de la suppression</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+                    Etes-vous sûr de vouloir supprimer cet evenement  ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color: darkred" data-bs-dismiss="modal">Annuler</button>
+                <form method="post" action="{{ path('event_delete', {'id': event.id}) }}" >
+                    <input type="hidden" name="_method" value="Supprimer">
+                    <input type="hidden" name="_token" value="{{ csrf_token('event_delete' ~ event.id) }}">
+                    <button class="btn" >Delete</button>
 
-<form method="post" action="{{ path('event_delete', {'id': events.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('event_delete' ~ events.id) }}">
-    <button class="btn" >Delete</button>
-
-</form>
-
-{% endblock %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

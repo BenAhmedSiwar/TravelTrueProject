@@ -16,8 +16,7 @@ class ReservationFormType extends AbstractType
     {
         $builder
             ->add('nbrPlace')
-
-            ->add('submit',SubmitType::class)
+            ->add('confirm',SubmitType::class )
         ;
     }
 
