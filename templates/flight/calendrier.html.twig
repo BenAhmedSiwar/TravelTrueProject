@@ -1,0 +1,64 @@
+
+{% extends 'dashboard.html.twig' %}
+
+{% block title %}Calendrier!{% endblock %}
+
+{%  block stylesheet %}
+
+{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css" integrity="sha256-uq9PNlMzB+1h01Ij9cx7zeE2OR2pLAfRw3uUUOOPKdA=" crossorigin="anonymous">
+    <style>
+        #calendrier
+        {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="calendrier">
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+        </div>
+    </section>
+    </div>
+
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js" integrity="sha256-rPPF6R+AH/Gilj2aC00ZAuB2EKmnEjXlEWx5MkAp7bw=" crossorigin="anonymous"></script>
+    <script>
+        window.onload = () => {
+            let calendarelt = document.querySelector("#calendrier")
+            let calendar = new FullCalendar.Calendar(calendarelt, {
+                initialView : 'dayGridMonth',
+                locale : 'fr',
+                timeZone : 'Afrique/Tunis',
+                headerToolbar : {
+                    start : 'prev,next today',
+                    center : 'title',
+                    end : 'dayGridMonth,'
+                },
+                events : {{ data | raw }},
+                {#eventContent : { html: '{% for o in offres %}<i>{{ o.name }}</i>{% endfor %}' },#}
+                editable : true
+            })
+            calendar.render()
+        }
+    </script>
+{% endblock %}

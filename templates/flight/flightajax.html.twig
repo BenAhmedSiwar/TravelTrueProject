@@ -1,0 +1,34 @@
+{% for vol in flights  %}
+    <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="single-place mb-30">
+            <div class="place-img">
+                <img src="{{ asset('front/assets/img/vols/'~ vol.image)}}" style="width: 200px; height:200px;"  alt="">
+            </div>
+            <div class="place-cap">
+                <div class="place-cap-top">
+                    <h3><a href="#">{{ vol.villedepart~" "~"~"~" "~vol.villearrivee }}</a></h3>
+                    <p class="dolor">{{ vol.prix }}<span>TND</span></p>
+                </div>
+                <div class="place-cap-bottom">
+                    <ul>
+                        <li><i class="far fa-clock"></i>{{ vol.datedepart | date('Y-m-D') }}</li>
+                        <li><i class="far fa-clock"></i>{{ vol.datearrive | date('Y-m-D') }}</li>
+                    </ul>
+                    <ul>
+                        <li><i class="far fa-plane"></i>num plane : {{ vol.numplane }}</li>
+                        <li><i class="far fa-calendar"></i>compagnie : {{ vol.compagnie }}</li>
+                        <li><i class="far fa-calendar"></i>capcite : {{ vol.quantite }}</li>
+                    </ul>
+                    <ul>
+                        <div class="badge badge-success">Reservé</div>
+
+                        <a class="btn btn-primary"  href="{{ path('reserver' , {'id' : vol.id}) }}">Reserver</a>
+                    </ul>
+                    <ul>
+                        <a class="btn btn-secondary" href="{{ path('pdf' , {'id' : vol.id}) }}">Pdf</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

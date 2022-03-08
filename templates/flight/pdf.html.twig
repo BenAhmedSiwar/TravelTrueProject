@@ -1,0 +1,43 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Ville depart
+        </th>
+        <th>
+            Ville Arrive
+        </th>
+        <th>
+            date Depart
+        </th>
+        <th>
+            Date Arrive
+        </th>
+        <th>
+            Prix
+        </th>
+        <th>
+            Num Plane
+        </th>
+        <th>
+            Compagnie
+        </th>
+        <th>
+            Quantite
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ vol.villedepart }}</td>
+            <td>{{ vol.villearrivee }}</td>
+            <td>{{ vol.datedepart | date('Y-m-D')  }}</td>
+            <td>{{ vol.datearrive | date('Y-m-D') }}</td>
+            <td>{{ vol.prix}}</td>
+            <td>{{ vol.numplane}}</td>
+            <td>{{ vol.compagnie}}</td>
+            <td>{{ vol.quantite}}</td>
+        </tr>
+
+    </tbody>
+</table>
