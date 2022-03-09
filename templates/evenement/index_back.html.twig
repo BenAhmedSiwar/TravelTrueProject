@@ -30,7 +30,7 @@
                 <td> {{ event.name }} </td>
                 <td> {{ event.id }} </td>
                 <td> {{ event.description }} </td>
-                <td> <button type="button" class="btn btn-outline-primary"><a href="{{ path('event_edit',{'id':event.id}) }}"> Edit </a></button> </td>
+                <td> <button type="button" class="btn btn-primary" > <a style="color: white" href="{{ path('event_edit',{'id':event.id}) }}"> Editer </a></button> </td>
                 <td>  {{ include ('evenement/delete.html.twig') }}</td>
 
 
@@ -41,6 +41,8 @@
         <table border="3">
 
         </table>
+
+
         <a class="btn btn-success" href="{{path('imprimer') }}">  Convertir en PDF </a>
 
         <script>
@@ -67,6 +69,5 @@
 
 
         </script>
-
         {% endblock %}
         {% endblock %}

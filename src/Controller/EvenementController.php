@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Comments;
 use App\Entity\Evenement;
 use App\Entity\ReservationEv;
+use App\Form\CommentsType;
 use App\Form\EventFormType;
 use App\Form\ReservationFormType;
 use App\Repository\EvenementRepository;
@@ -34,22 +36,35 @@ class EvenementController extends AbstractController
     /**
      * @Route("/EventDetail/{id}", name="Front_event_show", methods={"GET"})
      */
-    public function FrontEventshow(Evenement $evenement): Response
+    public function FrontEventshow(Evenement $evenement , Request $request): Response
     {
-        return $this->render('evenement/DetailEvent.html.twig',[
+        $comments = new Comments();
+
+        $form = $this->createForm(CommentsType::class, $comments);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($comments);
+            $manager->flush();
+
+
+        }
+        return $this->render('evenement/DetailEvent.html.twig', [
             'evenement' => $evenement,
+            'form'=>$form->createView()
         ]);
     }
 
     /**
      * @Route("/admin/evenement", name="Adminevenement")
      */
-    public function BackView(EvenementRepository $repository,Request $request): Response
+    public function BackView(EvenementRepository $repository,Request $request  ): Response
     {
         $listEvents=$repository->findAll();
         return $this->render('evenement/index_back.html.twig', [
-            'listEvents' => $listEvents,
-        ]);
+            'listEvents' => $listEvents,]);
+
+
     }
     /**
      * @Route("/evenement/add", name="event_add")

@@ -1,4 +1,4 @@
-{% extends 'front.html.twig' %}
+{#{% extends 'front.html.twig' %}
     {% block content %}
 
 
@@ -18,4 +18,67 @@
 
     {{ form_end(form) }}
         <script src="{{ asset('/js/PreventReload.js') }}"
-    {% endblock %}
+    {% endblock %} #}
+{% extends 'front.html.twig' %}
+
+{% block title %}Hello EvenementController!{% endblock %}
+
+    {% block containerr %}
+
+{% block body %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+{% endblock %}
+        {% endblock %}
+        {%  block places%}
+        {% endblock %}
+        {% block company %}
+        {% endblock %}
+{% block testimonal %}
+{% endblock %}
+        {% block blog %}
+        <div class="support-company-area ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="support-location-img mb-50">
+                            <img src="{{ asset('uploads/'~event.image ) }}" alt="">
+
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6" style="background-color: #e5e3d9; height: 400px ; border-radius: 5%" >
+                        <div class="right-caption">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle section-tittle2">
+
+                                <h2 style="color: #0a53be"> {{ event.name }}</h2>
+                            </div>
+                            <div class="form-contact">
+                                {{ form_start(form) }}
+                                <h4 style="color: #0b1c39"> User : {{ user.username }}</h4>
+
+                                <h3 style="color: #0b1c39"> Description :  {{ event.description }}</h3> <br>
+                                <div class="">
+                                    <label class="single-items" style="color: #0b1c39"> Capacity :</label>
+                                       {{ form_widget(form.nbrPlace) }}
+                                    <label class="single-items" style="color: #0b1c39"> ( Number of places available ) :</label>
+                                    {{ event.capacity }}  <br>
+
+                                </div>
+                                <br>
+                                  {{form_widget(form.confirm,{'attr':{'class':'btn btn-dark'}})}}
+
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <a  class="btn btn-dark"  href="{{ path('evenement') }}" style="color :white; padding: 15px" > back to list</a>
+        {% endblock %}

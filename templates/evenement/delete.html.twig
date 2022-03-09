@@ -1,6 +1,6 @@
 
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Delete
+    Supprimer
 </button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -13,11 +13,11 @@
                     Etes-vous sûr de vouloir supprimer cet evenement  ?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" style="background-color: darkred" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Annuler</button>
                 <form method="post" action="{{ path('event_delete', {'id': event.id}) }}" >
                     <input type="hidden" name="_method" value="Supprimer">
                     <input type="hidden" name="_token" value="{{ csrf_token('event_delete' ~ event.id) }}">
-                    <button class="btn" >Delete</button>
+                    <button type="button" class="btn btn-danger "> Supprimer</button>
 
                 </form>
             </div>
