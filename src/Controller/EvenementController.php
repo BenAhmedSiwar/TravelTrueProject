@@ -19,6 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
+use Knp\Component\Pager\PaginatorInterface;
 
 class EvenementController extends AbstractController
 {
@@ -38,29 +39,34 @@ class EvenementController extends AbstractController
      */
     public function FrontEventshow(Evenement $evenement , Request $request): Response
     {
-        $comments = new Comments();
+       /* $comments = new Comments();
 
         $form = $this->createForm(CommentsType::class, $comments);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($comments);
-            $manager->flush();
+            $manager->flush(); }
+*/
 
 
-        }
         return $this->render('evenement/DetailEvent.html.twig', [
             'evenement' => $evenement,
-            'form'=>$form->createView()
+//            'form'=>$form->createView()
         ]);
     }
 
     /**
      * @Route("/admin/evenement", name="Adminevenement")
      */
-    public function BackView(EvenementRepository $repository,Request $request  ): Response
+    public function BackView(EvenementRepository $repository,Request $request , PaginatorInterface $paginator ): Response
     {
-        $listEvents=$repository->findAll();
+        $list=$repository->findAll();
+        $listEvents = $paginator->paginate(
+            $list,
+            $request->query->getInt('page', 1 ),
+            3
+        );
         return $this->render('evenement/index_back.html.twig', [
             'listEvents' => $listEvents,]);
 
