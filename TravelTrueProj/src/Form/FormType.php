@@ -6,6 +6,8 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 class FormType extends AbstractType
 {
@@ -14,7 +16,10 @@ class FormType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('date_naissance')
+            ->add('date_naissance' , DateType::class, [
+                'widget' => 'single_text', 
+                'format' => 'yyyy-MM-dd'
+            ])
             ->add('email')
             ->add('password')
             ->add('confirm_password')

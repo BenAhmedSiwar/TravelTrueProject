@@ -25,11 +25,11 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-                default_target_path: front
+                default_target_path: home
 
             logout:
                 path: logout
-                target: front
+                target: home
 
 
             # activate different ways to authenticate

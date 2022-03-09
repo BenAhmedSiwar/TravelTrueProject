@@ -39,7 +39,7 @@ class User implements UserInterface
     private $prenom;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date_naissance;
 
@@ -51,8 +51,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min="8", minMessage="Votre mot de passe doit contenir au minimum 8 caractéres")
-     * @Assert\EqualTo(propertyPath="confirm_password" ,  message="vous n'avez pas tapé le meme mot de passe")
+     * @Assert\Length(min="10", minMessage="Votre mot de passe doit contenir au minimum 8 caractéres")
+     
      */
     private $password;
 
@@ -61,15 +61,27 @@ class User implements UserInterface
      */
     public $confirm_password;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $image;
+  
 
     /**
      * @ORM\OneToMany(targetEntity=Publication::class, mappedBy="user" ,cascade={"all"},orphanRemoval=true)
      */
     private $publication;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $role;
 
     public function __construct()
     {
@@ -105,12 +117,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTimeInterface
+    public function getDateNaissance()
     {
         return $this->date_naissance;
     }
 
-    public function setDateNaissance(\DateTimeInterface $date_naissance): self
+    public function setDateNaissance( $date_naissance): self
     {
         $this->date_naissance = $date_naissance;
 
@@ -141,17 +153,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function eraseCredentials(){}
     public function getSalt(){}
@@ -186,6 +187,42 @@ class User implements UserInterface
                 $publication->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(): self
+    {
+        $this->created_at = new \Datetime();
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(?string $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }

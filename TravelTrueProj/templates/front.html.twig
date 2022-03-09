@@ -1,6 +1,5 @@
 
 
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -13,17 +12,127 @@
     {% block img %} <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">{% endblock %}
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .notification-drop {
+            font-family: 'Ubuntu', sans-serif;
+            color: #444;
+        }
+        .notification-drop .item {
+            padding: 10px;
+            font-size: 18px;
+            position: relative;
+            border-bottom: 1px solid #ddd;
+        }
+        .notification-drop .item:hover {
+            cursor: pointer;
+        }
+        .notification-drop .item i {
+            margin-left: 10px;
+        }
+        .notification-drop .item ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background: #fff;
+            left: -200px;
+            right: 0;
+            z-index: 1;
+            border-top: 1px solid #ddd;
+        }
+        .notification-drop .item ul li {
+            font-size: 16px;
+            padding: 15px 0 15px 25px;
+        }
+        .notification-drop .item ul li:hover {
+            background: #ddd;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media screen and (min-width: 500px) {
+            .notification-drop {
+                display: flex;
+                justify-content: flex-end;
+            }
+            .notification-drop .item {
+                border: none;
+            }
+        }
+
+
+
+        .notification-bell{
+            font-size: 20px;
+        }
+
+        .btn__badge {
+            background: #FF5D5D;
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            padding:  3px 10px;
+            border-radius: 50%;
+        }
+
+        .pulse-button {
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+            -webkit-animation: pulse 1.5s infinite;
+        }
+
+        .pulse-button:hover {
+            -webkit-animation: none;
+        }
+
+        @-webkit-keyframes pulse {
+            0% {
+                -moz-transform: scale(0.9);
+                -ms-transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+            }
+            70% {
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
+            }
+            100% {
+                -moz-transform: scale(0.9);
+                -ms-transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+
+        .notification-text{
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .notification-text span{
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +143,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
+                    <img src="{{ asset('assets/img/logo/logo.png') }}" alt="" >
                 </div>
             </div>
         </div>
@@ -45,33 +154,7 @@
     <!-- Header Start -->
     <div class="header-area">
         <div class="main-header ">
-            {% block entet %}
-                <div class="header-top top-bg d-none d-lg-block">
-                    <div class="container">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-lg-8">
-                                <div class="header-info-left">
-                                    <ul>
-                                        <li>needhelp@gotrip.com</li>
-                                        <li>666 569 025077</li>
-                                        <li>broklyn street new york</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="header-info-right f-right">
-                                    <ul class="header-social">
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endblock %}
+            
             {% block logomenu %}
             <div class="header-bottom  header-sticky">
                 <div class="container">
@@ -79,7 +162,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.html"><img src="{{ asset('assets/img/logo/logo.png') }}" alt="" height="90" width="110" ></a>
                             </div>
                         </div>
                         {% endblock %}
@@ -89,7 +172,7 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="{{ path('home')}}">Home</a></li>
                                             <li><a href="about.html">About US</a></li>
                                             <li><a href="packages.html">Package</a></li>
                                             <li><a href="blog.html">Blog</a>
@@ -98,12 +181,94 @@
                                                     <li><a href="single-blog.html">Blog Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Pages</a>
+                                            {% if not app.user %}
+                                            <li><a href="#">Account</a>
                                                 <ul class="submenu">
-                                                    <li><a href="elements.html">Element</a></li>
+                                                
+                                                    <li><a href="{{ path('security_registration')}}">SignUp</a></li>
+                                                
+                                                     <li><a href="{{ path('login')}}">Login</a></li>
+                                                    
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact Us</a></li>
+                                            {% else %}
+                                             <li>
+                                             
+                                               <a href="{{ path('user')}}">My Account</a>
+                                              <ul class="submenu">
+                                                    <li><a href="{{ path('userEdit') }}">My Account Details</a></li>
+                                                    <li><a href="single-blog.html">My Issues</a></li>
+                                                    <li><a href="blog.html">My Reservations</a></li>
+                                                    <li><a href="single-blog.html">My events</a></li>
+                                                    <li><a href="single-blog.html">My Flights</a></li>
+                                                </ul>
+                                             </li>
+                                             </li>
+                                             <li><a href="{{ path('logout')}}">Logout</a></li>
+                                                {% if notifications is defined %}
+                                                    <li>
+                                                        <ul class="notification-drop">
+                                                            <li class="item">
+                                                                <i class="fa fa-bell" aria-hidden="true"></i> <span class="btn__badge pulse-button ">{{ notifications|length }}</span>
+                                                                <ul style="width: 450px">
+                                                                    {% for notification in notifications %}
+                                                                        <li style="width: 100%">
+                                                                            <div class="alert" style="width: 100% ;border-left: 6px solid #2196F3!important;border-bottom: 2px solid #2196F3!important;">
+                                                                                <a href="{{ path('AfficheReclama',{'id':notification.id})}}"> {{ notification.description }}</a>
+
+                                                                            </div>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                    <br>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                {% endif %}
+                                             
+                                            {% endif %}
+                                            <a href="#" class="icon14 dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
+												
+                                                <div class="dropdown-menu message-dropdown dropdown-menu-right">
+												<div class="user-request-list">
+													<div class="request-users">
+														<div class="user-request-dt">
+															<a href="#"><img src="images/user-dp-1.jpg" alt="">
+																<div class="user-title1">Jassica William </div>
+																<span>Hey How are you John Doe...</span>
+															</a>
+														</div>
+														<div class="time5">2 min ago</div>
+													</div>											
+												</div>
+												<div class="user-request-list">
+													<div class="request-users">
+														<div class="user-request-dt">
+															<a href="#"><img src="template/images/user-dp-1.jpg" alt="">
+																<div class="user-title1">Rock Smith </div>
+																<span>Interesting Event! I will join this...</span>
+															</a>
+														</div>
+														<div class="time5">5 min ago</div>
+													</div>											
+												</div>	
+												<div class="user-request-list">
+													<div class="request-users">
+														<div class="user-request-dt">
+															<a href="#"><img src="{{ asset('template/images/user-dp-1.jpg') }}" alt="">
+																<div class="user-title1">Joy Doe </div>
+																<span>Hey Sir! What about you...</span>
+															</a>
+														</div>
+														<div class="time5">10 min ago</div>
+													</div>											
+												</div>	
+												<div class="user-request-list">
+													<a href="my_freelancer_messages.html" class="view-all">View All Messages</a>
+												</div>	
+											</div>
+											</a>
+                                           
                                         </ul>
                                     </nav>
                                 </div>
@@ -133,7 +298,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                    <a href="index.html"><img src="{{ asset('assets/img/logo/logo.png') }}" alt="" height="90" width="110" ></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
@@ -212,38 +377,44 @@
 <!-- JS here -->
 
 <!-- All JS Custom Plugins Link Here here -->
-<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 
 <!-- Jquery, Popper, Bootstrap -->
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <!-- Jquery Mobile Menu -->
-<script src="./assets/js/jquery.slicknav.min.js"></script>
+<script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
 
 <!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/slick.min.js"></script>
+<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <!-- One Page, Animated-HeadLin -->
-<script src="./assets/js/wow.min.js"></script>
-<script src="./assets/js/animated.headline.js"></script>
-<script src="./assets/js/jquery.magnific-popup.js"></script>
+<script src="{{ asset('assets/js/wow.min.js') }}"></script>
+<script src="{{ asset('assets/js/animated.headline.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
 
 <!-- Scrollup, nice-select, sticky -->
-<script src="./assets/js/jquery.scrollUp.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.sticky.js"></script>
+<script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
 
 <!-- contact js -->
-<script src="./assets/js/contact.js"></script>
-<script src="./assets/js/jquery.form.js"></script>
-<script src="./assets/js/jquery.validate.min.js"></script>
-<script src="./assets/js/mail-script.js"></script>
-<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="{{ asset('assets/js/contact.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.form.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('assets/js/mail-script.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
 
 <!-- Jquery Plugins, main Jquery -->
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/main.js"></script>
-
+<script src="{{ asset('assets/js/plugins.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $(".notification-drop .item").on('click',function() {
+            $(this).find('ul').toggle();
+        });
+    });
+</script>
 </body>
 </html>

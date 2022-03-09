@@ -1,0 +1,80 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+
+ 
+<div class="card mb-4">
+                            
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                          <th>Photo</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Date de naissance</th>
+                                            <th>Email</th>
+                                            <th>Date de création</th>
+                                            <th>Gestion</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Photo</th>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    {% for u in user%}
+                                        <tr>
+                                        <td>
+                                           <div class="col-xl-2 col-lg-2 col-md-1">
+                                            <div class =" circular--landscape  d-flex align-items-center   ">
+                                            <img class="profile-thumb" height="70" width="70" style="border-radius: 50%" src = "{{ ('uploads/') ~ u.photo}}"></img>
+                                            </div>
+                                           </div>
+                                        </td>
+                                            <td>{{ u.getNom ()}} </td>
+                                            <td>{{ u.getPrenom ()}}</td>
+                                            <td>{{ u.getDateNaissance () |date('d-m-Y')}}</td>
+                                            <td>{{ u.getEmail()}}</td>
+                                            <td>{{ u.getCreatedAt () |date('d-m-Y')}}</td>
+                                            <td><button class="bookmark1" title="bookmark" ><i href="{{ path('usersEdit') }}" class="fas fa-edit" ></i></button>
+                                           
+                                            </td>
+                                        </tr>
+                                       {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+ 
+<link href="{{ asset ('template/css/responsive.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/css/style.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/css/datepicker.min.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/css/jquery.range.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.carousel.css')}}" rel="stylesheet">
+<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
+
+<!-- Semantic Css -->
+<link rel="stylesheet" type="text/css" href="template/vendor/semantic/semantic.min.css">
+
+ 
+              
+    <script src="{{ asset ('template/js/jquery.min.js')}}"></script>
+		<script src="{{ asset ('template/js/datepicker.min.js')}}"></script>
+		<script src="{{ asset ('template/js/i18n/datepicker.en.js')}}"></script>
+		<script src="{{ asset ('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="{{ asset ('template/vendor/OwlCarousel/owl.carousel.js')}}"></script>
+		<script src="{{ asset ('template/vendor/semantic/semantic.min.js')}}"></script>
+		<script src="{{ asset ('template/js/jquery.range-min.js')}}"></script>
+		<script src="{{ asset ('template/js/custom1.js')}}"></script>
+
+
+        {% endblock %}

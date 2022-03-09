@@ -1,20 +1,150 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% extends 'front.html.twig' %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/benah/OneDrive/Bureau/TravelTrueProj-20220221T210201Z-001/TravelTrueProj/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/benah/OneDrive/Bureau/TravelTrueProj-20220221T210201Z-001/TravelTrueProj/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="template/images/fav.png">
+		
+		<!-- Stylesheets -->
+		<link href="{{ asset ('template/css/responsive.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/css/style.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/css/datepicker.min.css')}}"  rel="stylesheet">
+		<link href="{{ asset ('template/css/jquery.range.css')}}"  rel="stylesheet">
+		<link href="{{ asset ('template/vendor/bootstrap/css/bootstrap.min.css')}}"  rel="stylesheet">
+		<link href="{{ asset ('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.carousel.css')}}"  rel="stylesheet">
+		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.theme.default.min.css')}}"  rel="stylesheet">
+		
+		<!-- Semantic Css -->
+		<link rel="stylesheet" type="text/css" href="template/vendor/semantic/semantic.min.css">
+		
+		<!-- Map Box -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+				
+	</head>
+	<body>
+		<!-- Search Model Start -->
+		<div class="modal srch-model fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header sheader">
+						<button type="button" class="close srch-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="srch-input" placeholder="Search Keywords...">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- Search Model End -->
+		<!-- Header Start -->
+		
+		<!-- Header End -->
+		
+		<!-- Body Start -->	
+		<main class="">				
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4">
+						<div class="account_dt_left">
+							<div class="job-center-dt">
+								<img alt="" src = "{{ ('uploads/') ~ user.photo}}">
+								<div class="job-urs-dts">
+									<div class="dp_upload">
+										
+									</div>
+									<h3>{{user.nom}} {{""}} {{user.prenom}} </h3>
+									<span>{{ user.DateNaissance () |date('d-m-Y')}}</span>
+									<li><a href="#" class="web_link"><i class="fas fa-globe"></i>{{user.email}}</a></li>
+									
+								</div>													
+							</div>
+							
+							
+							
+							<div class="rlt_section">
+								<div class="rtl_left">
+									<h6>Location</h6>
+								</div>
+								<div class="rtl_right">
+									<span><i class="fas fa-map-marker-alt lc_icon"></i> Ludhiana, India</span>
+								</div>
+								<div class="my_location">
+									<div id="map"></div>
+								</div>
+								<ul class="rlt_section2">
+									
+								
+							</div>
+							
+						</div>
+					</div>
+									
+																																										
+				</div>
+			</div>					
+		</main>
+		<!-- Body End -->
+		
+		<!-- Scroll to Top Button Start -->
+		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<!-- Scroll to Top Button End -->
+		<!-- Scripts js -->	
+		<script src="{{ asset ('template/js/jquery.min.js')}}" ></script>
+		<script src="{{ asset ('template/js/datepicker.min.js')}}" ></script>
+		<script src="{{ asset ('template/js/i18n/datepicker.en.js')}}" ></script>
+		<script src="{{ asset ('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}" ></script>
+		<script src="{{ asset ('template/vendor/OwlCarousel/owl.carousel.js')}}" ></script>
+		<script src="{{ asset ('template/vendor/semantic/semantic.min.js')}}" ></script>
+		<script src="{{ asset ('template/js/jquery.range-min.js')}}" ></script>
+		<script src="{{ asset ('template/js/custom1.js')}}" ></script>
+
+		
+		<!-- Map Box JS -->
+		<script src='https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js'></script>
+		<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FtYm9sIiwiYSI6ImNqdm03bzYydDE2cW00YWwyeHprd3FqamcifQ.HBy4R4sRcXgbgn2OteqFkQ';
+			var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+			mapboxClient.geocoding.forwardGeocode({
+			query: 'Ludhiana, India',
+			autocomplete: false,
+			limit: 1
+			})
+			.send()
+			.then(function (response) {
+			if (response && response.body && response.body.features && response.body.features.length) {
+			var feature = response.body.features[0];
+		 
+			var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			center: [75.8429,30.9042],
+			zoom: 10
+			});				
+  
+			new mapboxgl.Marker()
+			.setLngLat(feature.center)
+			.addTo(map);
+			}
+			
+			// Add zoom and rotation controls to the map.
+			map.addControl(new mapboxgl.NavigationControl());
+			});						
+		</script>
+		
+	</body>
+	
+</html>
 {% endblock %}

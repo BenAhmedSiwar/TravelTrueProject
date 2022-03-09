@@ -1,0 +1,104 @@
+{% extends 'back.html.twig' %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Register - SB Admin</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication" style="background-color : blue">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center" >
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajouter Admin</h3></div>
+                                    {{ form_start(form)}}
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                    <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"></i></span>
+                                                        {{ form_widget(form.nom,{'attr':{ 'placeholder': 'Entrez votre nom' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress1" }})}}
+                                                         
+                                                           <div style="color:red">{{ form_errors(form.nom) }} </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                         <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"> </i></span>
+                                                         {{ form_widget(form.prenom,{'attr':{ 'placeholder': 'Entrez votre Prenom' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                                                         
+                                                          <div style="color:red">{{ form_errors(form.prenom) }} </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                    <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"> </i></span>
+                                                         {{ form_widget(form.date_naissance,{'attr':{ 'placeholder': 'Entrez votre date de naissance' ,'class': 'form-control', 'type':'date' ,'id':'inputdateOne' }})}}         
+                  
+                                                             <div style="color:red">{{ form_errors(form.date_naissance) }} </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                            <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-envelope-open"></i></span>
+                                               {{ form_widget(form.email,{'attr':{ 'placeholder': 'Entrez votre email' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                                                 <div style="color:red">{{ form_errors(form.email) }} </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                     <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-key"></i></span>
+                                                        {{ form_widget(form.password,{'attr':{ 'placeholder': 'Entrez votre password' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                                                          
+                                                           <div style="color:red">{{ form_errors(form.password) }} </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                            <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-key"> </i></span>
+                                                        {{ form_widget(form.confirm_password,{'attr':{ 'placeholder': 'Entrez votre password' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                                                          <div style="color:red">{{ form_errors(form.confirm_password) }} </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                            <div class="d-grid">
+                                                <button class="btn btn-info" type="submit">Sign Up</button>
+                                               
+                                            </div>
+                                            {{ form_end(form)}}
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+          
+    </body>
+</html>
+
+
+
+
+
+
+{% endblock %}
