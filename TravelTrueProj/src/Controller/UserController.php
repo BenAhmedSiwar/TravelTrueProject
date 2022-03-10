@@ -233,6 +233,20 @@ class UserController extends AbstractController
 
     }
 
+
+     
+    /**
+     * @Route("/UserProfile", name="User")
+     */
+    public function Affiche (): Response
+    {
+        
+        $user = $this->security->getUser() ;
+       return $this->render('user/ProfileUser.html.twig' , [
+        'user' => $user ]);
+
+    }
+
     
 
 
