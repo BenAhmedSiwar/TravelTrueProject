@@ -2,6 +2,53 @@ Chart.defaults.global.defaultFontFamily = "Roboto";
 Chart.defaults.global.defaultFontColor = '#757575';
 Chart.defaults.global.defaultFontSize = '12';
 
+
+      var stat = document.getElementsByClassName("stat");
+     
+
+	  var month = document.getElementsByClassName("Months");
+      var dataStat = [];
+	   for  (i in stat  ) {
+	
+		   dataStat.push (stat[i].innerHTML)  ;
+		   
+	   }
+
+	   var dataMonth = [];
+	   for  (i in month  ) {
+	    
+		   dataMonth.push (month[i].innerHTML)  ;
+		   
+	   }
+
+	   for (i in dataMonth){
+       if (dataMonth [i] == '1' )
+	   dataMonth [i] = 'janvier'
+
+	   if (dataMonth [i] == '2' )
+	   dataMonth [i] = 'février'
+
+	   if (dataMonth [i] == '3' )
+	   dataMonth [i] = 'Mars'
+
+	   if (dataMonth [i] == '4' )
+	   dataMonth [i] = 'Avril'
+
+	   if (dataMonth [i] == '5' )
+	   dataMonth [i] = 'Mai'
+
+	   if (dataMonth [i] == '6' )
+	   dataMonth [i] = 'Juin'
+
+	   if (dataMonth [i] == '7' )
+	   dataMonth [i] = 'Juillet'
+	   }
+	   
+
+	   
+	   
+
+
 		var ctx = document.getElementById('chart').getContext('2d');
 
 		var chart = new Chart(ctx, {
@@ -9,14 +56,14 @@ Chart.defaults.global.defaultFontSize = '12';
 
 			// The data for our dataset
 			data: {
-				labels: ["January", "February", "March", "April", "May", "June"],
+				labels: dataMonth,
 				// Information about the dataset
 				datasets: [{
 					label: "Views",
 					backgroundColor: 'rgba(255,69,0,0.08)',
 					borderColor: '#ff4500',
 					borderWidth: "3",
-					data: [194,134,212,370,214,250],
+					data: dataStat,
 					pointRadius: 5,
 					pointHoverRadius:5,
 					pointHitRadius: 10,

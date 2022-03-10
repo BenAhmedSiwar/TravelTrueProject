@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 class UserType extends AbstractType
@@ -18,7 +19,10 @@ class UserType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('date_naissance')
+            ->add('date_naissance' , DateType::class, [
+                'widget' => 'single_text', 
+                'format' => 'yyyy-MM-dd'
+            ])
             ->add('email')
             ->add('photo',FileType::class, array(
                 'label'=>'photo',

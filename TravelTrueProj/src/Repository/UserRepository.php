@@ -36,15 +36,23 @@ class UserRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?User
+    
+    public function UsersByMonth()
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT Count(id) AS Stat , MONTH(created_at) As siwar FROM `user` WHERE created_at > DATE_SUB(now(), INTERVAL 6 MONTH ) GROUP BY MONTH(created_at)
+            
+            ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery();
+         // returns an array of arrays (i.e. a raw data set)
+         return $resultSet->fetchAllAssociative();
     }
-    */
+    
+
+
+
 }

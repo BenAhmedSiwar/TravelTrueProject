@@ -33,6 +33,7 @@ class LoginController extends AbstractController
         if (  $user && $user->getRole() =='admin'){
 
           return $this->redirectToRoute('statistiques') ;
+         
         }
         
         return $this->render('home/index.html.twig' , [

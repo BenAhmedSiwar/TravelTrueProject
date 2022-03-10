@@ -43,8 +43,8 @@
                                             <td>{{ u.getDateNaissance () |date('d-m-Y')}}</td>
                                             <td>{{ u.getEmail()}}</td>
                                             <td>{{ u.getCreatedAt () |date('d-m-Y')}}</td>
-                                            <td><a class="bookmark1" href="{{ path('usersEdit', { 'id': u.getId } )}}" type ="submit" title="bookmark" ><i class="fas fa-edit" ></i></a>
-                                            <td><a class="bookmark1"  type ="submit" title="bookmark" onclick="return confirm('Vous etes sur de supprimer cet utilisateur ?')" href="{{ path('deleteUser', { 'id': u.getId } )}}" ><i class="fa fa-trash" ></i></a>
+                                            <td><a class="bookmark1" href="{{ path('adminsEdit', { 'id': u.getId } )}}" type ="submit" title="bookmark" ><i class="fas fa-edit" ></i></a>
+                                            <td><a class="bookmark1"  type ="submit" title="bookmark" href="{{ path('deleteAdmin', { 'id': u.getId } )}}" ><i class="fa fa-trash" ></i></a>
                                            
                                             </td>
                                         </tr>

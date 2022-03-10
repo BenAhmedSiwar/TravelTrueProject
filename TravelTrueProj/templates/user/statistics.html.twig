@@ -1,0 +1,199 @@
+{% extends 'back.html.twig' %}
+
+
+{% block title %}Stastiques{% endblock %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+		<meta name="description" content="Gambolthemes">
+		<meta name="author" content="Gambolthemes">
+		<title>Jobby - My Freelancer Dashboard</title>
+		
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="template/images/fav.png">
+		
+		<!-- Stylesheets -->
+		<link href="{{ asset ('template/css/responsive.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/css/style.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/css/datepicker.min.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/css/jquery.range.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.carousel.css')}}" rel="stylesheet">
+		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
+		
+		<!-- Semantic Css -->
+		<link rel="stylesheet" type="text/css" href="template/vendor/semantic/semantic.min.css">
+		
+		<!-- Map Box -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+				
+	</head>
+	<body>
+		<!-- Search Model Start -->
+		<div class="modal srch-model fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header sheader">
+						<button type="button" class="close srch-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="srch-input" placeholder="Search Keywords...">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- Search Model End -->
+		<!-- Add Note Model Start -->
+		<div class="apply_job_form">
+			<div class="modal fade" id="addnoteModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-jb" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Add Note</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="jb_frm">
+								<h3>Do Not Forget.</h3>
+								<div class="form_inputs">									
+									<div class="form-group">
+										<div class="ui fluid search selection dropdown skills-search">
+											<input name="tags" type="hidden" value="">
+											<i class="dropdown icon"></i>
+											<input class="search" autocomplete="off" tabindex="0">
+											<span class="sizer" style=""></span>
+											<div class="default text">Priorty</div>
+											<div class="menu transition hidden" tabindex="-1">
+												<div class="item selected" data-value="Job1">High Priorty</div>										
+												<div class="item" data-value="Job2">Medium Priorty</div>										
+												<div class="item" data-value="Job3">Low Priorty</div>																				
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<textarea class="note-input" placeholder="Note"></textarea>
+									</div>
+									<div class="apply_btn150">
+										<button class="apply_job50" type="button">ADD NOTE</button>
+										<button class="apply_job_close" type="button" data-dismiss="modal">CANCEL</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Add Note Model End -->
+		
+			
+		
+		<!-- Body Start -->	
+		<main class="browse-section">				
+			<div class="container">
+				<div class="row" >
+					
+					<div class="col-lg-9 col-md-8 mainpage">
+						
+						{% for u in user %}
+                        <p class = "stat" style ="display:none"> {{u .Stat }}</P>
+                        <p class = "Months" style ="display:none">{{u .siwar}}</P>
+                        {% endfor %}
+                        	<div class="view_chart">
+							<div class="view_chart_header"  width ="110" height = "110">
+								<h4 class="mt-2">Your Profile View</h4>
+								<div class="date_selector">
+									<div class="ui selection dropdown skills-search vchrt-dropdown">
+										<input name="gender" type="hidden" value="default">
+										<i class="dropdown icon d-icon"></i>
+										<div class="text">Last 6 Months</div>
+										<div class="menu">
+											<div class="item" data-value="0">Last 6 Months</div>
+											<div class="item" data-value="1">This Year</div>
+											<div class="item" data-value="2">This Month</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                           
+							<div class="view_chart_body">
+								<canvas id="chart" width="890" height="300" class="chartjs-render-monitor"></canvas>
+							</div>
+						</div>
+                        
+						
+											
+					</div>																																						
+				</div>
+			</div>					
+		</main>
+		<!-- Body End -->
+		
+		<!-- Scroll to Top Button Start -->
+		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<!-- Scroll to Top Button End -->
+		<!-- Scripts js -->	
+		<script src="{{ asset ('template/js/jquery.min.js')}}"></script>
+		<script src="{{ asset ('template/js/datepicker.min.js')}}"></script>
+		<script src="{{ asset ('template/js/i18n/datepicker.en.js')}}"></script>
+		<script src="{{ asset ('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="{{ asset ('template/vendor/OwlCarousel/owl.carousel.js')}}"></script>
+		<script src="{{ asset ('template/vendor/semantic/semantic.min.js')}}"></script>
+		<script src="{{ asset ('template/js/jquery.range-min.js')}}"></script>
+		<script src="{{ asset ('template/js/custom1.js')}}"></script>
+		<script src="{{ asset ('template/js/chart-1.js')}}"></script>
+		<script src="{{ asset ('template/js/chart-views.js')}}"></script>
+		<script src="{{ asset ('template/js/chart-pie.js')}}"></script>
+		<script src="{{ asset ('template/js/Chart.min.js')}}"></script>
+		
+		<!-- Map Box JS -->
+		<script src='https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js'></script>
+		<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FtYm9sIiwiYSI6ImNqdm03bzYydDE2cW00YWwyeHprd3FqamcifQ.HBy4R4sRcXgbgn2OteqFkQ';
+			var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+			mapboxClient.geocoding.forwardGeocode({
+			query: 'Ludhiana, India',
+			autocomplete: false,
+			limit: 1
+			})
+			.send()
+			.then(function (response) {
+			if (response && response.body && response.body.features && response.body.features.length) {
+			var feature = response.body.features[0];
+		 
+			var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			center: [75.8429,30.9042],
+			zoom: 10
+			});				
+  
+			new mapboxgl.Marker()
+			.setLngLat(feature.center)
+			.addTo(map);
+			}
+			
+			// Add zoom and rotation controls to the map.
+			map.addControl(new mapboxgl.NavigationControl());
+			});						
+		</script>
+		
+	</body>
+	
+</html>
+{% endblock %}

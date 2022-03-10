@@ -80,6 +80,16 @@
                           </div>
                         </div>
 
+                         
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            {{ form_widget(form.date_naissance,{'attr':{ 'placeholder': 'Entrez votre date de naissance' ,'class': 'form-control', 'type':'date' ,'id':'inputdateOne' }})}}         
+                           <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"> </i></span>
+                             <div style="color:red">{{ form_errors(form.date_naissance) }} </div>
+                          </div>
+                        </div>
+
+
                         <div class="col-sm-6 col-md-6 col-xl-5">
                           <div class="input-group-icon">
                            
@@ -101,22 +111,14 @@
                         
                         <div class="col-sm-6 col-md-6 col-xl-5">
                           <div class="input-group-icon">
-                             {{ form_widget(form.confirm_password,{'attr':{ 'placeholder': 'Entrez votre password' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
-                           <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-key"> </i></span>
-                            <div style="color:red">{{ form_errors(form.confirm_password) }} </div>
+                             {{ form_widget(form.confirm_password,{'attr':{ 'placeholder': 'Entrez votre password' ,'class': 'form-control input-box form-voyage-control' , 'id':"inputAddress2" }})}}
+                           <span type ="password " class="nav-link-icon text-800 fs--1 input-box-icon"><i  class="fas fa-key"> </i></span>
+                            <div style="color:red" >{{ form_errors(form.confirm_password) }} </div>
                           </div>
                         </div>
 
 
-                        
-                        <div class="col-sm-6 col-md-6 col-xl-5">
-                          <div class="input-group-icon">
-                            {{ form_widget(form.date_naissance,{'attr':{ 'placeholder': 'Entrez votre date de naissance' ,'class': 'form-control', 'type':'date' ,'id':'inputdateOne' }})}}         
-                           <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"> </i></span>
-                             <div style="color:red">{{ form_errors(form.date_naissance) }} </div>
-                          </div>
-                        </div>
-
+                       
                         
                         <div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
                           <button class="btn btn-warning" type="submit">Sign Up</button>
