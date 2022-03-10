@@ -1,143 +1,130 @@
-
 {% extends 'front.html.twig' %}
+
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	
-		
-		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="template/images/fav.png">
-		
-		<!-- Stylesheets -->
-		<link href="{{ asset ('template/css/responsive.css')}}" rel="stylesheet">
-		<link href="{{ asset ('template/css/style.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/css/datepicker.min.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/css/jquery.range.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/vendor/bootstrap/css/bootstrap.min.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/vendor/fontawesome-free/css/all.min.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.carousel.css')}}"  rel="stylesheet">
-		<link href="{{ asset ('template/vendor/OwlCarousel/assets/owl.theme.default.min.css')}}"  rel="stylesheet">
-		
-		<!-- Semantic Css -->
-		<link rel="stylesheet" type="text/css" href="template/vendor/semantic/semantic.min.css">
-		
-		<!-- Map Box -->
-		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
-		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
-				
-	</head>
-	<body>
-		<!-- Search Model Start -->
-		
-		<!-- Search Model End -->
-		
-		
-		<!-- Title Start -->
-		<!-- Body Start -->	
-		<main class="browse-section" background-color=#4f805d>				
-			<div class="container" >
-				<div class="row">
-					<div class="col-lg-3 col-md-4">
-						
-					</div>
-					<div class="col-lg-9 col-md-8 mainpage">
-						
-						<div class="account_tabs">
-							
-						</div>
-						<div class="jobs_manage">
-							<div class="row">																									
-								
-								<div class="col-lg-12">
-									<div class="tab-content" id="myTabContent">
-										<div class="tab-pane fade show active" id="my_profile" role="tabpanel">
-											<div class="view_chart">
-										
-												<div class="view_chart_header">
-													<h4>My Profile</h4>								
-												</div>
-												<div class="post_job_body">
-													<form>	
-														<div class="row">
-																	
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-																											
-															<div class="col-lg-6">
-																<div class="form-group">
-																	<label class="label15">First Name*</label>
-																	<input type="text" class="job-input" placeholder="Your First Name">
-																</div>
-															</div>
-															<div class="col-lg-6">
-																<div class="form-group">
-																	<label class="label15">Last Name*</label>
-																	<input type="text" class="job-input" placeholder="Your Last Name">
-																</div>
-															</div>
-															<div class="col-lg-6">
-																<div class="form-group">
-																	<label class="label15">Email Address*</label>
-																	<input type="email" class="job-input" placeholder="Enter Your Email Address">
-																</div>
-															</div>
-															<div class="col-lg-6">
-																<div class="form-group">
-																	<label class="label15">Birthday*</label>
-																	<div class="smm_input">
-																		<input type="text" class="job-input datepicker-here" data-language="en" placeholder="Enter Your Birth Date">
-																		<div class="mix_max"><i class="fas fa-calendar-alt"></i></div>															
-																	</div>															
-																</div>
-															</div>
-															
-																													
-														
-																				
-															<div class="col-lg-12">
-																<button class="post_jp_btn" type="submit">SAVE MODIFICATIONS</button>
-															</div>
-														</div>
-													</form>
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>voyage | Landing, Corporate &amp; Business Templatee</title>
 
 
-										
-												</div>
-											</div>
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset ('tempp/assets/img/favicons/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset ('tempp/assets/img/favicons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset ('tempp/assets/img/favicons/favicon-16x16.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset ('tempp/assets/img/favicons/favicon.ico ')}}">
+    <link rel="manifest" href="{{ asset ('tempp/assets/img/favicons/manifest.json')}}">
+    <meta name="msapplication-TileImage" content="{{ asset ('tempp/assets/img/favicons/mstile-150x150.png')}}">
+    <meta name="theme-color" content="#ffffff">
 
- 
-										</div>
-										
-								</div>	
-							</div>							
-						</div>						
-					</div>																																						
-				</div>
-			</div>					
-		</main>
-		<!-- Body End -->
-		<!-- footer Start -->
-		
-		<!-- footer End -->
-		<!-- Scroll to Top Button Start -->
-		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-		<!-- Scroll to Top Button End -->
-		<!-- Scripts js -->	
-		<script src="{{ asset ('template/js/jquery.min.js')}}"></script>
-		<script src="{{ asset ('template/js/datepicker.min.js')}}"></script>
-		<script src="{{ asset ('template/js/i18n/datepicker.en.js')}}"></script>
-		<script src="{{ asset ('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-		<script src="{{ asset ('template/vendor/OwlCarousel/owl.carousel.js')}}"></script>
-		<script src="{{ asset ('template/vendor/semantic/semantic.min.js')}}"></script>
-		<script src="{{ asset ('template/js/jquery.range-min.js')}}"></script>
-		<script src="{{ asset ('template/js/custom1.js')}}"></script>
 
-		
-		
-	</body>
-	
-</html>
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="{{ asset ('tempp/assets/css/theme.css')}}" rel="stylesheet" />
+
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+     
+      <section class="mt-7 py-0">
+        <div class="bg-holder w-50 bg-right d-none d-lg-block" style="background-image:url(tempp/assets/img/gallery/hero-section-1.png);">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 py-5 py-xl-5 py-xxl-7">
+              <h1 class="display-3 text-1000 fw-normal">Modification !</h1>
+              <h1 class="display-3 text-primary fw-bold">Discover the beauty</h1>
+              <div class="pt-5">
+                <nav>
+                  
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='row g-4 mt-5'> 
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+
+                         {{ form_start(form)}}
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddress1">Address 1</label>
+                            {{ form_widget(form.nom,{'attr':{ 'placeholder': 'Entrez votre nom' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress1" }})}}
+                            <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"></i></span>
+                            <div style="color:red">{{ form_errors(form.nom) }} </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddress2">Address 2</label>
+                            
+                            {{ form_widget(form.prenom,{'attr':{ 'placeholder': 'Entrez votre Prenom' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                            <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"> </i></span>
+                            <div style="color:red">{{ form_errors(form.prenom) }} </div>
+                          </div>
+                        </div>
+
+                         
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            {{ form_widget(form.date_naissance,{'attr':{ 'placeholder': 'Entrez votre date de naissance' ,'class': 'form-control', 'type':'date' ,'id':'inputdateOne' }})}}         
+                           <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"> </i></span>
+                             <div style="color:red">{{ form_errors(form.date_naissance) }} </div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                           
+                            {{ form_widget(form.email,{'attr':{ 'placeholder': 'Entrez votre email' ,'class': 'form-control input-box form-voyage-control', 'id':"inputAddress2" }})}}
+                            <span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-envelope-open"></i></span>
+                            <div style="color:red">{{ form_errors(form.email) }} </div>
+                          </div>
+                        </div>
+
+
+                       
+                        
+                        
+                        {{ form_end(form)}}
+                      </form>
+                    
+                        
+</div>
+         </div>    
+         </div> </div> 
+         </div> </div> 
+         </div> 
+         </section>
+
+
+                         
+             <!-- Mobile Menu -->
+             
+
+
+<script src="{{ asset ('tempp/assets/js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{ asset ('tempp/assets/styles/bootstrap4/popper.js')}}"></script>
+<script src="{{ asset ('tempp/assets/styles/bootstrap4/bootstrap.min.js')}}"></script>
+<script src="{{ asset ('tempp/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+<script src="{{ asset ('tempp/assets/plugins/easing/easing.js')}}"></script>
+<script src="{{ asset ('tempp/assets/js/custom.js')}}"></script>
+
 {% endblock %}

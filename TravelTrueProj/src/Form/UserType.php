@@ -29,12 +29,18 @@ class UserType extends AbstractType
                 'attr'=>[
                     'placeholder'=>'photo',
                     'mapped'=>false,
-                    
-
+             
                 ],
                 'data_class' => null
 
             ))
+            ->add('Save', submitType :: class, [
+                'attr' => ['class' => 'btn  btn-warning']
+                
+                
+
+               
+            ])
             
         ;
     }
