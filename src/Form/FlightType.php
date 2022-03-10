@@ -14,8 +14,8 @@ class FlightType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('villearrivee' , TextType::class)
             ->add('villedepart',TextType::class)
+            ->add('villearrivee' , TextType::class)
             ->add('datedepart',DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',

@@ -1,4 +1,10 @@
-<table class="table">
+<H1 style="color:#002aff" align="center">Billet électronique </H1>
+<h3>merci de réserver avec TravelTrue</h3>
+<h5> A l'aeroport, vous devez presenter cette piece</h5>
+<p></p>
+<p></p>
+<p>Détail de votre vol:</p>
+<table class="table" border>
     <thead>
     <tr>
         <th>
@@ -22,9 +28,7 @@
         <th>
             Compagnie
         </th>
-        <th>
-            Quantite
-        </th>
+
     </tr>
     </thead>
     <tbody>
@@ -36,8 +40,10 @@
             <td>{{ vol.prix}}</td>
             <td>{{ vol.numplane}}</td>
             <td>{{ vol.compagnie}}</td>
-            <td>{{ vol.quantite}}</td>
         </tr>
-
     </tbody>
 </table>
+<h3 style="color: #efc02f">vous souhaitez <br>trouver un hotel à {{ vol.villearrivee }} ?</h3>
+<h5 size="10">Cherchez-le et trouvez-le sur TravelTrue</h5>
+<p style="color: red">Important : le porte du masque est obligatoire dans tous les espaces public  </p>
+<h4 align="right" >bon vol</h4>

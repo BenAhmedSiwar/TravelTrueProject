@@ -1,7 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Flights{% endblock %}
-
+{% block entet %}
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="slider-active">
+            <div class="single-slider hero-overly  t d-flex align-items-center" data-background="{{ asset('front/assets/img/hero/about.jpg' )}}" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-9">
+                            <div class="hero__caption">
+                                <h1>Find your <span>Next flight!</span> </h1>
+                                <p>Where would you like to go?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="w-search">
+                        <div class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" id="search" class="form-control" placeholder="Search">
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="#"><span class="fa arrow"></span></a>
+                                <ul style="background-color: #0b0b0b" class="nav " id="entitiesNav">
+                                </ul>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% block body %}
     <div class="favourite-place place-padding">
         <div class="container">
@@ -9,25 +43,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle text-center">
-                        <h2>Les Vols</h2>
+                        <h2>flights list</h2>
                     </div>
                 </div>
             </div>
-            <form class="w-search">
-                <div class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" id="search" class="form-control" placeholder="Search">
-                    </div>
-                    <!-- /input-group -->
-                </div>
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="#"><span class="fa arrow"></span></a>
-                        <ul style="background-color: #0b0b0b" class="nav " id="entitiesNav">
-                        </ul>
-                    </li>
-                </ul>
-            </form>
+
             <div class="row" id="all">
                {% include 'flight/flightajax.html.twig' %}
             </div>
@@ -45,7 +65,7 @@
             $("#search").keyup(function(e){
                 /* La variable value va prendre la valeur insérer dans le champ de texte
                 afin d’effectuer la recherche */
-                var value = $(this).val();
+                var value = $(this).val() ;
                 if(currentRequest != null) {
                     currentRequest.abort();
                 }

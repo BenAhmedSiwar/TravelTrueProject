@@ -10,9 +10,11 @@ use App\Repository\ReservationRepository;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class FlightController extends AbstractController
 {
@@ -183,6 +185,49 @@ class FlightController extends AbstractController
         $data = json_encode($rdvs);
         return $this->render('flight/calendrier.html.twig',compact('data'));
     }
+    /**
+     * @Route("/stats",name="stats")
+     */
+    public function statistiques(FlightRepository $flightRepository){
+        //on va chercher toutes les vols
+        $flight =$flightRepository->findAll();
 
+        $flightdes=[];
+        $flightcount=[];
+        foreach ($flight as $flight){
+            $flightdes[]= $flight->getVillearrivee();
+            $flightcount[]= count($flight->getReservations());
+        }
+        return $this->render('global/stats.html.twig',[
+            'flightdes'=>json_encode($flightdes),
+            'flightcount'=>json_encode($flightcount)
+        ]);
+    }
+    /**
+     * @Route("/create-checkout-session", name="checkout")
+     */
+    public function checkout()
+    {
+
+        \Stripe\Stripe::setApiKey('sk_test_51ITrmKDemurknTpxCDhbkbloGf2Vp9zDeOfOF80IVNhYUS5RnsYtvcYPYXr1dyygpj70e127PbPpr5HRLqqspqSO00H1gDbJGa');
+        $session = \Stripe\Checkout\Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                        'name' => 'T-shirt',
+                    ],
+                    'unit_amount'=> 150,
+                ],
+                'quantity' => 1,
+            ]],
+            'mode' => 'payment',
+            # These placeholder URLs will be replaced in a following step.
+            'success_url'=> $this->generateUrl('success',[],UrlGeneratorInterface::ABSOLUTE_URL),
+            'cancel_url' => $this->generateUrl('echec',[],UrlGeneratorInterface::ABSOLUTE_URL),
+        ]);
+        return new JsonResponse(['id'=>$session->id]);
+    }
 
 }
