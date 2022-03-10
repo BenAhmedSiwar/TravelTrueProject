@@ -1,0 +1,22 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}
+    Reservation
+{% endblock %}
+
+{% block body %}
+    <h1 class="mt-4">Reserver</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Reserver</li>
+    </ol>
+    <div class="card mb-4">
+    <div class="card-header">
+        Reserver
+    </div>
+    <div class="card-body">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">{% if modif %}modifier{% else %}ajouter{% endif %}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

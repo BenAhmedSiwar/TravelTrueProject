@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\Chambre;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class ChambreType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('title',TextareaType::class)
+            ->add('type',ChoiceType::class,[
+                'choices'=>[
+                    'suite'=>'suite',
+                    'single'=>'single',
+                    'double'=>'double'
+                ]
+            ])
+            ->add('vue',TextareaType::class)
+            ->add('prix')
+            ->add('quantite')
+            ->add('image')
+
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => Chambre::class,
+        ]);
+    }
+}

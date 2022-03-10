@@ -1,0 +1,48 @@
+{% for c in chambres  %}
+    <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="single-place mb-30">
+            <div class="place-img">
+                <img src="{{ asset('front/assets/img/chambres/'~ c.image)}}" style="width: 200px; height:200px;"  alt="">
+            </div>
+            <div class="place-cap">
+                <div class="place-cap-top">
+                    <h3><a href="#">{{ c.title }}</a></h3>
+                    <p class="dolor">{{ c.prix }}<span>TND</span></p>
+                </div>
+                <div class="place-cap-top">
+                    <div>
+                        <h3><a href="{{ path('like', {"id" : c.id}) }}"><i class="fa fa-thumbs-up"></i></a></h3>
+                        <p>
+                            {% for like in like  %}
+                                {% if like.chambre.id == c.id %}
+                                    {{ like.likes }}
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div>
+                        <h3><a href="{{ path('dislike', {"id" : c.id}) }}"><i class="fa fa-thumbs-down"></i> </a></h3>
+                        <p>
+                            {% for like in dislike  %}
+                                {% if like.chambre.id == c.id %}
+                                    {{ like.dislikes }}
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                <div class="place-cap-bottom">
+                    <ul>
+                        <li><i class="far fa-clock"></i>{{ c.type}}</li>
+                        <li><i class="far fa-clock"></i>{{ c.vue}}</li>
+                        <li><i class="far fa-clock"></i>{{ c.quantite }}</li>
+                    </ul>
+                    <ul>
+                        <a class="btn btn-primary"  href="{{ path('reserver',{'id' : c.id}) }}">Reserver</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
