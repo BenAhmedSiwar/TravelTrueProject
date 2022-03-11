@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CommentsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +22,8 @@ class Comments
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank( message="Please fill in the blank")
+
      */
     private $content;
 
@@ -31,11 +34,13 @@ class Comments
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank( message="Please fill in the blank")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank( message="Please fill in the blank")
      */
     private $nickname;
 
@@ -143,6 +148,7 @@ class Comments
     public function setValide(bool $valide): self
     {
         $this->valide = $valide;
+        return $this;
 
     }
 

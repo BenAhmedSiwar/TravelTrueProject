@@ -21,7 +21,19 @@
 {% block testimonal %}
 {% endblock %}
         {% block blog %}
-        <div class="support-company-area section-padding 1.25">
+<div class="home-blog-area section-padding1">
+    <div class="container">
+        <!-- Section Tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle text-center">
+                    <span> <h3 style="color: #ff8000" >  Detail of our Event </h3> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="support-company-area "style="margin:30px; padding:5px">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6">
@@ -35,7 +47,7 @@
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
                                 
-                                <h2>{{ evenement.name }}</h2>
+                                <h2 style="color: #0a53be">{{ evenement.name }}</h2>
                             </div>
                             <div class="support-caption">
                                 <h3>{{ evenement.description }}</h3>
@@ -45,7 +57,7 @@
                                         <input type="checkbox" checked="checked active">
                                         <span class="checkmark"></span>
                                     </label>
-                                    
+
                                     <label class="single-items"> Capacity : {{ evenement.capacity }}
                                         <input type="checkbox" checked="checked active">
                                         <span class="checkmark"></span>
@@ -63,14 +75,63 @@
                 </div>
             </div>
         </div>
+                    <div class="col-md-6">
+                        <div class="media mb-4">
+
+                            <div class="media-body" style="padding-top:2px">
+                                {% for comment in evenement.comments %}
+                                    {% if comment.parent == null %}
+                                        <h5 > Comment of {{comment.nickname}}<small> - <i> Published on  {{comment.getCreatedAt|date("d/m/Y H:i") }}</i></small></h5>
+
+                                        <p style="border-radius: 5% ; background-color: #e5e3d9 ; height: 50px ; width: 600px"> {{comment.content|raw}}</p>
+                                       <p><a href="#ajout-commentaire" data-reply data-id="{{comment.id}}" class="btn primary ">Replay</a></p>
 
 
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-4">Leave a review</h4>
+                        <small>Your email address will not be published.</small>
 
-            <a href="http://twitter.com/share" class="twitter-share-button"
-               data-count="vertical" data-via="InfoWebMaster">Tweet</a>
-            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-            <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
-            <script type="in/share" data-counter="top"></script>
-            <a name="fb_share" type="box_count" share_url="http://www.example.com/page.html"></a>
-            <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+                        <div class="col-xs2 col-sm3", id="ajout-commentaire">
+                            <h2>Add Comment </h2>
+
+                                <table class="table mb-0 " id="mytable" >
+                            {{ form_start(commentForm,{'attr':{'novalidate':'novalidate' }})}}
+                            <tr>
+                            <td> {{ form_label(commentForm.email,'Email address') }}</td>
+                            <td> {{ form_widget(commentForm.email) }}</td>
+                            <td> {{ form_errors(commentForm.email) }}</td>
+                            </tr>
+                            <tr>
+                            <td>  {{ form_label(commentForm.nickname,'Your Name') }} </td>
+                            <td>  {{ form_widget(commentForm.nickname) }}</td>
+                            <td> {{ form_errors(commentForm.nickname) }}</td>
+                            </tr>
+                            <tr>
+                            <td>{{ form_label(commentForm.content,'Your comment') }}</td>
+                            <td>   {{ form_widget(commentForm.content) }}</td>
+                            <td>  {{ form_errors(commentForm.content) }}</td>
+                            </tr>
+                            <tr>
+                            <td>   {{ form_label(commentForm.valide,'Validate') }}</td>
+                            <td>  {{ form_widget(commentForm.valide) }}</td>
+                            <td>  {{ form_errors(commentForm.valide) }}</td>
+                            </tr>
+                                </table>
+                                    {{ form_widget(commentForm) }}
+
+
+                            {{ form_end(commentForm) }}
+                            <!-- <button type="submit" id="form_submit" name="form[submit]" class="btn btn-primary px-3">
+                                 Leave Your Review
+                             </button>-->
+                        </div>
+
+                    </div>
+
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http://127.0.0.1:8000/EventDetail/{id}/&layout=button_count&size=large&mobile_iframe=true&width=83&height=28&377260381070019" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
         {% endblock %}

@@ -32,7 +32,6 @@
     </tr>
     <tr>
         <td input placeholder="capacité.." > {{form_label(form.capacity, " Capacité ") }}</td>
-
         <td> {{form_widget(form.capacity)}} </td>
         <td> {{form_errors (form.capacity)}} </td>
     </tr>
@@ -56,7 +55,7 @@
         <td> {{form_widget(form.Creer)}} </td>
     </tr>
     </table>
-
+</div>
     {{ form_widget(form) }}
 {{form_end(form)}}
     <style>
@@ -65,37 +64,3 @@
         }
     </style>
 {% endblock %}
-{#
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="form.name">Nom</label>
-                <input type="name" class="form-control" id="form.name" placeholder="Nom">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="form.capacity">Capacité</label>
-                <input type="password" class="form-control" id="form.capacity" placeholder="Capacité">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="form.adresse">Address</label>
-            <input type="text" class="form-control" id="form.adresse" placeholder="Tunisie ..">
-        </div>
-        <div class="form-group">
-            <label for="form.description">Description de l'evenement</label>
-            <input type="text" class="form-control" id="form.description" placeholder="Jours , Tarif ..">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="form.dateDebut">Date Debut</label>
-                <input type="date" class="form-control" id="form.dateDebut">
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="form.dateFin">Date Fin </label>
-                <input type="text" class="form-control" id="form.dateFin">
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>#}

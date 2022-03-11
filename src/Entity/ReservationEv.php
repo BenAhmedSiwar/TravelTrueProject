@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ReservationEvRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ReservationEvRepository::class)
@@ -19,6 +21,7 @@ class ReservationEv
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank( message="Please enter the number of places")
      */
     private $nbrPlace;
 

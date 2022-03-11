@@ -18,6 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -35,26 +37,36 @@ class EvenementController extends AbstractController
     }
 
     /**
-     * @Route("/EventDetail/{id}", name="Front_event_show", methods={"GET"})
+     * @Route("/EventDetail/{id}", name="Front_event_show", methods={"GET", "POST"})
      */
     public function FrontEventshow(Evenement $evenement , Request $request): Response
     {
-       /* $comments = new Comments();
+        $comment = new Comments();
 
-        $form = $this->createForm(CommentsType::class, $comments);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($comments);
-            $manager->flush(); }
-*/
-
-
+        $commentForm = $this->createForm(CommentsType::class, $comment);
+        $commentForm->handleRequest($request);
+      if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+            $comment->setCreatedAt(new \DateTimeImmutable());
+            $comment->setEvents($evenement);
+            // On récupère le contenu du champ parentid
+            $parentid = $commentForm->get("parent")->getData();
+            // On va chercher le commentaire
+            $em = $this->getDoctrine()->getManager();
+            if($parentid != null){
+                $parent = $em->getRepository(Comments::class)->find($parentid);
+            }
+            // On définit le parent
+            $comment->setParent($parent ?? null);
+            $em->persist($comment);
+            $em->flush();
+            $this->addFlash('message', 'Your comment has been sent');
+        }
         return $this->render('evenement/DetailEvent.html.twig', [
             'evenement' => $evenement,
-//            'form'=>$form->createView()
+              'commentForm'=>$commentForm->createView()
         ]);
     }
+
 
     /**
      * @Route("/admin/evenement", name="Adminevenement")

@@ -44,14 +44,14 @@
         {% block blog %}
         <div class="support-company-area ">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center" style="margin:20px">
                     <div class="col-xl-6 col-lg-6">
                         <div class="support-location-img mb-50">
                             <img src="{{ asset('uploads/'~event.image ) }}" alt="">
 
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6" style="background-color: #e5e3d9; height: 400px ; border-radius: 5%" >
+                    <div class="col-xl-6 col-lg-6" style="background-color: #e5e3d9; height: 450px ; weight : 700px ; border-radius: 5%" >
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
@@ -60,14 +60,16 @@
                             </div>
                             <div class="form-contact">
                                 {{ form_start(form) }}
-                                <h4 style="color: #0b1c39"> User : {{ user.username }}</h4>
+                                <h4 style="color: #0b1c39  ; font-weight: bold"> User : <br>{{ user.username }}</h4>
 
-                                <h3 style="color: #0b1c39"> Description :  {{ event.description }}</h3> <br>
+                                <h3 style="color: #0b1c39 ; font-weight: bold"> Description : <br>
+                                    {{ event.description }}</h3> <br>
                                 <div class="">
                                     <label class="single-items" style="color: #0b1c39"> Capacity :</label>
                                        {{ form_widget(form.nbrPlace) }}
-                                    <label class="single-items" style="color: #0b1c39"> ( Number of places available ) :</label>
-                                    {{ event.capacity }}  <br>
+                                    <label class="single-items" style="color: #0b1c39"> ( Number of places available ) :
+                                        {{ event.capacity }} </label>
+
 
                                 </div>
                                 <br>
