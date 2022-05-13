@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="142.0" prefWidth="1022.0" style="-fx-border-color: linear-gradient(to right, #00c6ff, #0072ff);" styleClass="white-backround" stylesheets="@../../BackOffice/View/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontOffice.Controller.ChambreFrontController">
+   <children>
+      <Label fx:id="id" layoutX="822.0" layoutY="14.0" />
+      <ImageView fx:id="imageSubject" fitHeight="74.0" fitWidth="121.0" layoutX="656.0" layoutY="15.0" onScroll="#displayimage" pickOnBounds="true" preserveRatio="true" />
+      <HBox layoutY="41.0" prefHeight="74.0" prefWidth="924.0">
+         <children>
+            <JFXTextField fx:id="ChambreType" prefHeight="25.0" prefWidth="154.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <JFXTextField fx:id="chambreView" prefHeight="25.0" prefWidth="154.0" />
+            <JFXTextField fx:id="chambreTitre" />
+            <JFXTextField fx:id="chambrePrix" />
+            <JFXTextField fx:id="ChambreQuantite" />
+            <ImageView fx:id="chambreImage" fitHeight="99.0" fitWidth="200.0" onScroll="#displayimage" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <JFXButton fx:id="reservationbtn" layoutX="902.0" layoutY="103.0" onMouseClicked="#reservation" prefHeight="25.0" prefWidth="84.0" text="Reserver" />
+      <FontAwesomeIconView fill="BLUE" glyphName="THUMBS_ALT_UP" layoutX="902.0" layoutY="74.0" onMouseClicked="#like" size="30" wrappingWidth="28.99999925494194" />
+      <FontAwesomeIconView fill="RED" glyphName="THUMBS_DOWN" layoutX="966.0" layoutY="73.0" onMouseClicked="#dislike" size="30" />
+      <Label fx:id="labemnblike" layoutX="900.0" layoutY="24.0" prefHeight="21.0" prefWidth="35.0" />
+      <Label fx:id="labelnbdislike" layoutX="962.0" layoutY="27.0" prefHeight="21.0" prefWidth="35.0" />
+   </children>
+</AnchorPane>

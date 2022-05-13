@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#getSelected" prefHeight="574.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceFlight.AfficherflightController">
+   <children>
+      <ImageView fitHeight="483.0" fitWidth="770.0" layoutX="291.0" layoutY="92.0" opacity="0.66" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/famous-buildings-round-the-world-travel-wallpaper%20(1).jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="FlightTable" layoutX="332.0" layoutY="198.0" onMouseClicked="#getSelected" prefHeight="312.0" prefWidth="687.0">
+        <columns>
+            <TableColumn fx:id="idFlightTF" prefWidth="76.0" text="idFlight" />
+          <TableColumn fx:id="villedepTF" prefWidth="122.0" text="ville depart" />
+          <TableColumn fx:id="villearrTF" prefWidth="164.0" text="ville arrive" />
+            <TableColumn fx:id="prixTF" prefWidth="95.0" text="prix" />
+            <TableColumn fx:id="numplaneTF" prefWidth="229.0" text="numplane" />
+        </columns>
+      </TableView>
+      <Button layoutX="953.0" layoutY="512.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+      <VBox layoutX="-1.0" layoutY="35.0" prefHeight="540.0" prefWidth="292.0" style="-fx-background-color: #8CB1FC;">
+         <children>
+            <Label text="id Flight">
+               <VBox.margin>
+                  <Insets bottom="-70.0" left="20.0" right="20.0" top="80.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="idFlightTF1">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="80.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Ville depart">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="villedepTF1">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Ville arrive">
+               <VBox.margin>
+                  <Insets bottom="-40.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="villearrTF1">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="NumPlane">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="numplaneTF1">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Prix">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="prixTF1" prefHeight="11.0" prefWidth="285.0">
+               <VBox.margin>
+                  <Insets bottom="-50.0" left="20.0" right="20.0" top="60.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="48.0" prefWidth="325.0">
+               <children>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#Supprimer" style="-fx-background-color: #577389;" styleClass="search-button" stylesheets="@../style/style.css" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #577389;" styleClass="search-button" stylesheets="@../style/style.css" text="modifier" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="-14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="1076.0" style="-fx-background-color: #FEE058;" stylesheets="@../style/style.css" AnchorPane.topAnchor="0.0">
+         <children>
+            <Line endX="-110.70710754394531" endY="1.2928924560546875" startX="-112.0" startY="-69.0" stroke="#577389" />
+            <Button mnemonicParsing="false" onAction="#gestionFlight" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FEE058;" styleClass="transparent" stylesheets="@../style/style.css" text="Gestion Vols" textFill="#fcf6f6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="-1.0" top="18.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#gestionChambre" prefHeight="90.0" prefWidth="175.0" style="-fx-background-color: #FEE058;" styleClass="transparent" stylesheets="@../style/style.css" text="Gestion chambre" textFill="#fcf6f6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="396.0" layoutY="118.0" prefHeight="48.0" prefWidth="328.0" stylesheets="@../style/style.css">
+         <children>
+            <TextField fx:id="search1" prefHeight="40.0" prefWidth="195.0" promptText="Type here to search" style="-fx-background-color: #FFFFFF;" styleClass="transparent" stylesheets="@../style/style.css">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#searchButton" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #577389;" styleClass="search-button" stylesheets="@../style/style.css" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="search-box" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </HBox>
+      
+      <Button layoutX="873.0" layoutY="512.0" mnemonicParsing="false" onAction="#pdf" text="pdf" />
+      <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="853.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../img/LOGO.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

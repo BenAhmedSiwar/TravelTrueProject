@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="424.0" prefWidth="556.0" styleClass="white-backround" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontOffice.Controller.ReserverController">
+   <children>
+      <HBox alignment="CENTER" layoutX="57.0" layoutY="117.0" prefHeight="54.0" prefWidth="453.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Debut : " wrappingWidth="145.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="datedebut" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="37.0" layoutY="171.0" prefHeight="47.0" prefWidth="493.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Fin : " wrappingWidth="135.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="datefin" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="92.0" layoutY="342.0" prefHeight="62.0" prefWidth="384.0">
+         <children>
+            <JFXButton fx:id="addbtn" onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" styleClass="btn" stylesheets="@style.css" text="Confirmer">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="39.0" prefWidth="384.0" styleClass="text-layount" text="Reserver">
+         <opaqueInsets>
+            <Insets bottom="10.0" top="20.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="Arial" size="34.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color blue="0.18969298899173737" green="0.21562500298023224" red="0.2368421107530594" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.021320663392543793" green="0.8460749387741089" red="0.9210526347160339" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <HBox layoutX="134.0" layoutY="239.0" prefHeight="47.0" prefWidth="400.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité : " wrappingWidth="135.13671875">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="quantitRes" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="774.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="BackOffice.Controller.DisplayimageController">
+    <stylesheets>
+        <URL value="@topicManagement.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="displayimage" fitHeight="550.0" fitWidth="774.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="845.0" prefWidth="1310.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontOffice.Controller.MesReservationController">
+   <children>
+      <VBox layoutX="-7.0" prefHeight="849.0" prefWidth="275.0" styleClass="white-backround">
+         <children>
+            <VBox alignment="CENTER" prefHeight="380.0" prefWidth="100.0" styleClass="profile-layout" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../AllIntravel/AllInTravel/AllInTravel/AllIntravelfinal/src/allintravelfinal/imageTools/avatar.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" text="Chambre " textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets top="20.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="450.0" prefWidth="284.0" styleClass="white-backround">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="TOP" prefHeight="22.0" prefWidth="283.0" style="-fx-rotate: 90;" styleClass="text-layount" text="AllInTravel" textAlignment="JUSTIFY" wrapText="true">
+                     <VBox.margin>
+                        <Insets top="200.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Leelawadee" size="50.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color blue="0.18969298899173737" green="0.21562500298023224" red="0.2368421107530594" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.007662835249042145">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color blue="0.021320663392543793" green="0.8460749387741089" red="0.9210526347160339" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="268.0" layoutY="150.0" prefHeight="699.0" prefWidth="1053.0" styleClass="white-backround">
+         <children>
+            <Pane prefHeight="145.0" prefWidth="1053.0" styleClass="profile-layout" stylesheets="@style.css">
+               <children>
+                  <Label layoutX="397.0" layoutY="7.0" prefHeight="75.0" prefWidth="322.0" text="Mes Reservations " textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ScrollPane prefHeight="667.0" prefWidth="1051.0" styleClass="transparent">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1043.0" prefWidth="1054.0">
+                     <children>
+                        <FlowPane fx:id="FP" alignment="CENTER" hgap="10.0" layoutX="14.0" layoutY="51.0" prefHeight="45.0" prefWidth="1019.0" prefWrapLength="0.0" rowValignment="TOP" vgap="10.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="268.0" prefHeight="150.0" prefWidth="1053.0" styleClass="white-backround">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="white-backround" HBox.hgrow="ALWAYS">
+               <children>
+                  <FontAwesomeIconView fill="#00e676" glyphName="REFRESH" layoutX="67.0" layoutY="100.0" onMouseClicked="#refreshTable" size="45" styleClass="btn" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

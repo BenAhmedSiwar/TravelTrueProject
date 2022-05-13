@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="753.0" prefWidth="1156.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InterfaceFlight.AjoutFlightController">
+   <children>
+      <ImageView fitHeight="712.0" fitWidth="831.0" layoutX="325.0" layoutY="52.0" opacity="0.47" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/airplane-at-sunset.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="967.0" layoutY="560.0" mnemonicParsing="false" onAction="#afficher" text="details" />
+      <TableView fx:id="TerrainTable" layoutX="345.0" layoutY="143.0" prefHeight="398.0" prefWidth="654.0" style="background-color: #f2f2f2;" styleClass="table" stylesheets="@../style/style.css">
+         <columns>
+            <TableColumn fx:id="idTerrainTF" prefWidth="94.0" text="idFlight" />
+            <TableColumn fx:id="nomTF1" prefWidth="126.0" text="villedepart" />
+            <TableColumn fx:id="numTelTF1" prefWidth="180.0" text="villearrive" />
+            <TableColumn fx:id="localisationTF1" prefWidth="119.0" text="numplane" />
+            <TableColumn fx:id="descriptionTF1" prefWidth="134.0" text="prix" />
+         </columns>
+      </TableView>
+      <VBox prefHeight="760.0" prefWidth="325.0" style="-fx-background-color: #8CB1FC;">
+         <children>
+            <Label text="ville depart">
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" top="80.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="villedepTF2" promptText="saisir ville de depart">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="ville arrive">
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="villearrTF2" promptText="saisir ville arrive">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="numplane">
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="numplaneTF2" promptText="saisir numplane">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="prix">
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="prixTF2" prefHeight="32.0" prefWidth="295.0" promptText="prix">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="72.0" prefWidth="325.0" style="-fx-background-color: #8CB1FC;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #577389;" styleClass="search-button" stylesheets="@../style/style.css" text="ajouter" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="200.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="-1.0" layoutY="-19.0" prefHeight="73.0" prefWidth="1156.0" style="-fx-background-color: #FEE058;" stylesheets="@../style/style.css">
+         <children>
+     
+            <Line endX="-110.70710754394531" endY="1.2928924560546875" startX="-112.0" startY="-69.0" stroke="#577389" />
+            <Button mnemonicParsing="false" onAction="#gestionFlight" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FEE058;" styleClass="transparent" stylesheets="@../style/style.css" text="Gestion Vols" textFill="#fcf6f6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="-1.0" top="18.0" />
+               </HBox.margin>
+            </Button>
+            <Line endX="-111.99995422363281" endY="2.2928924560546875" startX="-112.0" startY="-69.0" stroke="#577389" />
+         </children>
+      </HBox>
+      <Line endX="645.0" layoutX="426.0" layoutY="53.0" startX="-427.0" stroke="#577389" />
+      <Line endX="-111.0" endY="542.0" layoutX="436.0" layoutY="63.0" startX="-111.0" startY="-11.0" stroke="#577389" />
+      <HBox alignment="CENTER" layoutX="354.0" layoutY="82.0" prefHeight="48.0" prefWidth="340.0" stylesheets="@../style/style.css">
+         <children>
+            <TextField fx:id="search1" prefHeight="40.0" prefWidth="195.0" promptText="Type here to search" style="-fx-background-color: #FFFFFF;" styleClass="transparent" stylesheets="@../style/style.css">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#searchButton" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #577389;" styleClass="search-button" stylesheets="@../style/style.css" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="search-box" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </HBox>
+      <PieChart fx:id="pichart" layoutX="362.0" layoutY="623.0" prefHeight="191.0" prefWidth="325.0" />
+   </children>
+</AnchorPane>
